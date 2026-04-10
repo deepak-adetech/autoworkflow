@@ -115,7 +115,7 @@ export default function Hero() {
         <div className="mb-2">
           <BlurText
             text="We automate the processes"
-            className="text-[clamp(2.5rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.025em] text-[#EEEEF0] justify-center"
+            className="text-[clamp(2rem,5vw,3.75rem)] font-bold leading-[1.1] tracking-[-0.025em] text-[#EEEEF0] justify-center"
             delay={80}
             animateBy="words"
             direction="bottom"
@@ -124,7 +124,7 @@ export default function Hero() {
         </div>
         <BlurText
           text="no software was built for."
-          className="text-[clamp(2.5rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.025em] justify-center text-gradient-animated-inline"
+          className="text-[clamp(2rem,5vw,3.75rem)] font-bold leading-[1.1] tracking-[-0.025em] justify-center text-gradient-animated-inline"
           delay={100}
           animateBy="words"
           direction="bottom"
@@ -141,10 +141,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8, ease }}
-          className="text-lg md:text-xl text-[#9CA3AF] leading-relaxed max-w-2xl mx-auto mb-10 mt-8"
+          className="text-base md:text-lg text-[#9CA3AF] leading-relaxed max-w-xl mx-auto mb-10 mt-7"
         >
-          Smart people shouldn&apos;t do dumb work. We close the gap between &ldquo;AI can do this&rdquo; and &ldquo;AI actually does this here.&rdquo;{" "}
-          <span className="italic text-[#6B7280]">First workflow automated free.</span>
+          Smart people shouldn&apos;t do dumb work. We close the gap between
+          &ldquo;AI can do this&rdquo; and &ldquo;AI actually does this here.&rdquo;{" "}
+          <span className="italic text-[#6B7280]">First workflow free.</span>
         </motion.p>
 
         {/* CTA */}
