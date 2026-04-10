@@ -150,7 +150,7 @@ export default function TrustedBy() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center text-xs font-medium text-[#55585E] tracking-widest uppercase mb-8"
+        className="text-center text-xs font-medium text-[#6B7280] tracking-widest uppercase mb-8"
       >
         Trusted by industry leaders
       </motion.p>
@@ -158,15 +158,15 @@ export default function TrustedBy() {
       {/* Marquee */}
       <div className="relative">
         {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#09090B] to-transparent" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#09090B] to-transparent" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#0A0A0F] to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#0A0A0F] to-transparent" />
 
         <div className="flex overflow-hidden">
           <div className="marquee-track flex shrink-0 gap-12 md:gap-16 items-center">
             {doubled.map((client, i) => (
               <div
                 key={`${client.name}-${i}`}
-                className="flex items-center shrink-0 text-[#55585E] hover:text-[#8A8F98] transition-colors duration-300 opacity-60 hover:opacity-90"
+                className="flex items-center shrink-0 text-[#6B7280] hover:text-[#9CA3AF] transition-colors duration-300 opacity-60 hover:opacity-90"
               >
                 <client.Logo />
               </div>

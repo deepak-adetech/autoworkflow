@@ -14,7 +14,7 @@ export default function CTASection() {
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full opacity-[0.06] blur-[100px]"
           style={{
-            background: "radial-gradient(ellipse, #5E6AD2, #7C5CFC, transparent 70%)",
+            background: "radial-gradient(ellipse, #3B82F6, #06B6D4, transparent 70%)",
           }}
         />
       </div>
@@ -27,9 +27,9 @@ export default function CTASection() {
           transition={{ duration: 0.7, ease }}
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(94,106,210,0.25)] bg-[rgba(94,106,210,0.06)] mb-8">
-            <Sparkles size={14} className="text-[#5E6AD2]" />
-            <span className="text-xs font-medium text-[#5E6AD2]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(59,130,246,0.25)] bg-[rgba(59,130,246,0.06)] mb-8">
+            <Sparkles size={14} className="text-[#3B82F6]" />
+            <span className="text-xs font-medium text-[#3B82F6]">
               First workflow free
             </span>
           </div>
@@ -40,7 +40,7 @@ export default function CTASection() {
             <span className="text-gradient-animated">in manual work?</span>
           </h2>
 
-          <p className="text-lg md:text-xl text-[#8A8F98] leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="text-lg md:text-xl text-[#9CA3AF] leading-relaxed max-w-2xl mx-auto mb-10">
             Book a free strategy call. We&apos;ll audit your workflows and
             automate your first one free. No contracts, no obligations — just
             results.
@@ -53,7 +53,7 @@ export default function CTASection() {
             </ShineButton>
           </div>
 
-          <p className="mt-8 text-sm text-[#55585E]">
+          <p className="mt-8 text-sm text-[#6B7280]">
             No contracts. No obligations. Just results.
           </p>
         </motion.div>

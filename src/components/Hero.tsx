@@ -6,45 +6,60 @@ import ShineButton from "./ShineButton";
 import BlurText from "./reactbits/BlurText";
 import ShinyText from "./reactbits/ShinyText";
 
-/* ─── CSS Gradient Mesh Background ─── */
-function GradientMesh() {
+/* ─── Gradient Orb — the visual focal point ─── */
+function GradientOrb() {
   return (
     <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-      {/* Static multi-layer gradient mesh */}
+      {/* Primary orb — large blue-cyan glow at top-center */}
       <div
-        className="absolute inset-0"
+        className="absolute -top-[25%] left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full opacity-[0.14]"
         style={{
-          background: `
-            radial-gradient(ellipse 80% 50% at 25% 20%, rgba(94,106,210,0.12) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 60% at 78% 25%, rgba(124,92,252,0.09) 0%, transparent 55%),
-            radial-gradient(ellipse 70% 50% at 50% 90%, rgba(167,139,250,0.06) 0%, transparent 60%)
-          `,
+          background:
+            "radial-gradient(ellipse, #3B82F6 0%, #06B6D4 35%, transparent 70%)",
         }}
       />
-
-      {/* Animated soft glow — single element, CSS-only */}
-      <div className="hero-glow absolute w-[700px] h-[500px] rounded-full top-[15%] left-[30%] opacity-[0.07]" />
-
-      {/* Subtle grid lines */}
+      {/* Animated secondary glow */}
+      <div className="hero-glow absolute w-[600px] h-[400px] rounded-full top-[10%] left-[35%] opacity-[0.08]" />
+      {/* Soft warm accent on the right */}
       <div
-        className="absolute inset-0 opacity-[0.025]"
+        className="absolute top-[20%] right-[5%] w-[350px] h-[350px] rounded-full opacity-[0.04]"
         style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)
-          `,
-          backgroundSize: "80px 80px",
-        }}
-      />
-
-      {/* Top-down vignette */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "radial-gradient(ellipse 70% 50% at 50% 50%, transparent 40%, #09090B 100%)",
+          background: "radial-gradient(circle, #06B6D4, transparent 70%)",
         }}
       />
     </div>
+  );
+}
+
+/* ─── Grid background with fade ─── */
+function HeroGrid() {
+  return (
+    <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+      {/* Grid lines */}
+      <div className="hero-grid absolute inset-0 opacity-100" />
+      {/* Radial fade — grid dissolves at edges */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 60% at 50% 40%, transparent 30%, #0A0A0F 80%)",
+        }}
+      />
+    </div>
+  );
+}
+
+/* ─── Horizontal beam ─── */
+function LightBeam() {
+  return (
+    <div
+      className="absolute top-[42%] left-0 right-0 h-px opacity-[0.08]"
+      aria-hidden="true"
+      style={{
+        background:
+          "linear-gradient(90deg, transparent 10%, #3B82F6 30%, #06B6D4 50%, #3B82F6 70%, transparent 90%)",
+      }}
+    />
   );
 }
 
@@ -53,8 +68,11 @@ export default function Hero() {
   const ease = [0.16, 1, 0.3, 1] as const;
 
   return (
-    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
-      <GradientMesh />
+    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0A0A0F]">
+      {/* Background layers */}
+      <HeroGrid />
+      <GradientOrb />
+      <LightBeam />
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-5xl px-5 sm:px-8 pt-24 pb-16 text-center">
@@ -63,14 +81,14 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)] mb-8"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(59,130,246,0.2)] bg-[rgba(59,130,246,0.06)] mb-8"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#5E6AD2] animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] animate-pulse" />
           <ShinyText
             text="AI-Powered Automated Workflows"
             className="text-xs font-medium tracking-wide uppercase"
-            color="#8A8F98"
-            shineColor="#EDEDEF"
+            color="#9CA3AF"
+            shineColor="#EEEEF0"
             speed={3}
           />
         </motion.div>
@@ -79,7 +97,7 @@ export default function Hero() {
         <div className="mb-2">
           <BlurText
             text="We automate the work"
-            className="text-[clamp(2.5rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.025em] text-[#EDEDEF] justify-center"
+            className="text-[clamp(2.5rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.025em] text-[#EEEEF0] justify-center"
             delay={80}
             animateBy="words"
             direction="bottom"
@@ -105,7 +123,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8, ease }}
-          className="text-lg md:text-xl text-[#8A8F98] leading-relaxed max-w-2xl mx-auto mb-10 mt-8 italic"
+          className="text-lg md:text-xl text-[#9CA3AF] leading-relaxed max-w-2xl mx-auto mb-10 mt-8 italic"
         >
           First workflow automated free — no strings attached.
         </motion.p>
@@ -129,9 +147,9 @@ export default function Hero() {
 
       {/* Bottom gradient fade */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
         style={{
-          background: "linear-gradient(to top, #09090B, transparent)",
+          background: "linear-gradient(to top, #0A0A0F, transparent)",
         }}
       />
     </section>

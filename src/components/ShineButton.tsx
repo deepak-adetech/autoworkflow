@@ -24,9 +24,9 @@ export default function ShineButton({
 
   const variants = {
     primary:
-      "bg-[#5E6AD2] text-white hover:bg-[#6E7AE2] shadow-[0_0_24px_-6px_rgba(94,106,210,0.4)] hover:shadow-[0_0_32px_-4px_rgba(94,106,210,0.5)]",
+      "bg-[#3B82F6] text-white hover:bg-[#60A5FA] shadow-[0_0_24px_-6px_rgba(59,130,246,0.4)] hover:shadow-[0_0_32px_-4px_rgba(59,130,246,0.5)]",
     secondary:
-      "bg-transparent text-[#EDEDEF] border border-[rgba(255,255,255,0.12)] hover:border-[rgba(255,255,255,0.24)] hover:bg-[rgba(255,255,255,0.04)]",
+      "bg-transparent text-[#EEEEF0] border border-[rgba(255,255,255,0.12)] hover:border-[rgba(255,255,255,0.24)] hover:bg-[rgba(255,255,255,0.04)]",
   };
 
   const sizeStyles = {

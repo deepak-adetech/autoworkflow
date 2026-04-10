@@ -166,21 +166,21 @@ function TestimonialCarousel() {
       <div
         className="absolute -top-20 -right-20 w-64 h-64 rounded-full opacity-[0.06] blur-[80px] pointer-events-none"
         style={{
-          background: "radial-gradient(circle, #5E6AD2, transparent)",
+          background: "radial-gradient(circle, #3B82F6, transparent)",
         }}
       />
 
       {/* Navigation arrows */}
       <button
         onClick={() => handleManual(prev)}
-        className="absolute left-3 md:left-5 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#55585E] hover:text-[#EDEDEF] hover:border-[rgba(94,106,210,0.3)] transition-all duration-200 cursor-pointer"
+        className="absolute left-3 md:left-5 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#6B7280] hover:text-[#EEEEF0] hover:border-[rgba(59,130,246,0.3)] transition-all duration-200 cursor-pointer"
         aria-label="Previous testimonial"
       >
         <ChevronLeft size={16} />
       </button>
       <button
         onClick={() => handleManual(next)}
-        className="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#55585E] hover:text-[#EDEDEF] hover:border-[rgba(94,106,210,0.3)] transition-all duration-200 cursor-pointer"
+        className="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#6B7280] hover:text-[#EEEEF0] hover:border-[rgba(59,130,246,0.3)] transition-all duration-200 cursor-pointer"
         aria-label="Next testimonial"
       >
         <ChevronRight size={16} />
@@ -188,7 +188,7 @@ function TestimonialCarousel() {
 
       {/* Testimonial content */}
       <div className="px-6 md:px-10 min-h-[260px] md:min-h-[220px] flex flex-col justify-between">
-        <Quote size={28} className="text-[#5E6AD2] opacity-40 mb-5 shrink-0" />
+        <Quote size={28} className="text-[#3B82F6] opacity-40 mb-5 shrink-0" />
 
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
@@ -200,18 +200,18 @@ function TestimonialCarousel() {
             exit="exit"
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
-            <blockquote className="text-base md:text-lg text-[#EDEDEF] leading-[1.7] font-medium mb-8">
+            <blockquote className="text-base md:text-lg text-[#EEEEF0] leading-[1.7] font-medium mb-8">
               &ldquo;{t.quote}&rdquo;
             </blockquote>
             <div className="flex items-center gap-4">
-              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#5E6AD2] to-[#7C5CFC] flex items-center justify-center text-white font-bold text-xs shrink-0">
+              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#06B6D4] flex items-center justify-center text-white font-bold text-xs shrink-0">
                 {t.initials}
               </div>
               <div>
-                <p className="text-sm font-semibold text-[#EDEDEF]">
+                <p className="text-sm font-semibold text-[#EEEEF0]">
                   {t.name}
                 </p>
-                <p className="text-sm text-[#8A8F98]">{t.title}</p>
+                <p className="text-sm text-[#9CA3AF]">{t.title}</p>
               </div>
             </div>
           </motion.div>
@@ -226,7 +226,7 @@ function TestimonialCarousel() {
             onClick={() => handleManual(() => goTo(i))}
             className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
               i === current
-                ? "w-6 bg-[#5E6AD2]"
+                ? "w-6 bg-[#3B82F6]"
                 : "w-1.5 bg-[rgba(255,255,255,0.15)] hover:bg-[rgba(255,255,255,0.3)]"
             }`}
             aria-label={`Go to testimonial ${i + 1}`}
@@ -250,14 +250,14 @@ export default function Results() {
           transition={{ duration: 0.7, ease }}
           className="text-center mb-16 md:mb-20"
         >
-          <p className="text-xs font-medium text-[#5E6AD2] tracking-widest uppercase mb-4">
+          <p className="text-xs font-medium text-[#3B82F6] tracking-widest uppercase mb-4">
             Results
           </p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.025em] mb-5">
             Numbers that{" "}
             <span className="text-gradient">speak for themselves</span>
           </h2>
-          <p className="text-[#8A8F98] text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#9CA3AF] text-lg leading-relaxed max-w-2xl mx-auto">
             We measure success in hours returned to your team and dollars kept
             in your pocket.
           </p>
@@ -285,7 +285,7 @@ export default function Results() {
                   />
                 )}
               </div>
-              <p className="text-sm text-[#8A8F98] font-medium">
+              <p className="text-sm text-[#9CA3AF] font-medium">
                 {metric.label}
               </p>
             </motion.div>

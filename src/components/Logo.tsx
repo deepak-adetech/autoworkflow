@@ -27,8 +27,8 @@ export default function Logo({ className = "", size = "md" }: LogoProps) {
       >
         <defs>
           <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#5E6AD2" />
-            <stop offset="100%" stopColor="#7C5CFC" />
+            <stop offset="0%" stopColor="#3B82F6" />
+            <stop offset="100%" stopColor="#06B6D4" />
           </linearGradient>
         </defs>
         {/* Rounded square */}
@@ -40,7 +40,7 @@ export default function Logo({ className = "", size = "md" }: LogoProps) {
           rx="8"
           stroke="url(#logo-grad)"
           strokeWidth="1.5"
-          fill="rgba(94,106,210,0.08)"
+          fill="rgba(59,130,246,0.08)"
         />
         {/* Connection lines */}
         <line x1="10" y1="11" x2="22" y2="11" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" />
@@ -54,8 +54,8 @@ export default function Logo({ className = "", size = "md" }: LogoProps) {
 
       {/* Brand text */}
       <span className={`${s.text} font-bold tracking-tight`}>
-        <span className="text-[#EDEDEF]">AutoWorkflows</span>
-        <span className="text-[#5E6AD2] ai-breathe">.AI</span>
+        <span className="text-[#EEEEF0]">AutoWorkflows</span>
+        <span className="text-[#3B82F6] ai-breathe">.AI</span>
       </span>
     </a>
   );

@@ -49,7 +49,7 @@ export default function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-[#8A8F98] hover:text-[#EDEDEF] transition-colors duration-200"
+                  className="text-sm text-[#9CA3AF] hover:text-[#EEEEF0] transition-colors duration-200"
                 >
                   {link.label}
                 </a>
@@ -65,7 +65,7 @@ export default function Header() {
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden p-2 text-[#8A8F98] hover:text-white transition-colors"
+              className="md:hidden p-2 text-[#9CA3AF] hover:text-white transition-colors"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
@@ -83,13 +83,13 @@ export default function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[60] bg-[#09090B]/95 backdrop-blur-2xl flex flex-col"
+            className="fixed inset-0 z-[60] bg-[#0A0A0F]/95 backdrop-blur-2xl flex flex-col"
           >
             {/* Close button */}
             <div className="flex justify-end px-5 pt-4">
               <button
                 onClick={() => setMobileOpen(false)}
-                className="p-2 text-[#8A8F98] hover:text-white transition-colors"
+                className="p-2 text-[#9CA3AF] hover:text-white transition-colors"
                 aria-label="Close menu"
               >
                 <X size={28} />
@@ -106,7 +106,7 @@ export default function Header() {
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 + i * 0.07, duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-2xl font-semibold text-[#EDEDEF] hover:text-[#5E6AD2] transition-colors"
+                  className="text-2xl font-semibold text-[#EEEEF0] hover:text-[#3B82F6] transition-colors"
                 >
                   {link.label}
                 </motion.a>

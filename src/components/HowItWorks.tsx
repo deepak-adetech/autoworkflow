@@ -44,7 +44,7 @@ export default function HowItWorks() {
         className="absolute inset-0 pointer-events-none opacity-40"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 50% 50%, rgba(94,106,210,0.04), transparent)",
+            "radial-gradient(ellipse 80% 50% at 50% 50%, rgba(59,130,246,0.04), transparent)",
         }}
       />
 
@@ -57,14 +57,14 @@ export default function HowItWorks() {
           transition={{ duration: 0.7, ease }}
           className="text-center mb-16 md:mb-20"
         >
-          <p className="text-xs font-medium text-[#5E6AD2] tracking-widest uppercase mb-4">
+          <p className="text-xs font-medium text-[#3B82F6] tracking-widest uppercase mb-4">
             How It Works
           </p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.025em] mb-5">
             From chaos to{" "}
             <span className="text-gradient">autopilot</span>
           </h2>
-          <p className="text-[#8A8F98] text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#9CA3AF] text-lg leading-relaxed max-w-2xl mx-auto">
             Four steps. Two weeks. One less headache on your plate forever.
           </p>
         </motion.div>
@@ -72,7 +72,7 @@ export default function HowItWorks() {
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           {/* Connecting line (desktop) */}
-          <div className="hidden lg:block absolute top-[72px] left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[rgba(94,106,210,0.2)] to-transparent" />
+          <div className="hidden lg:block absolute top-[72px] left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[rgba(59,130,246,0.2)] to-transparent" />
 
           {STEPS.map((step, i) => (
             <motion.div
@@ -86,23 +86,23 @@ export default function HowItWorks() {
               {/* Step icon circle */}
               <div className="relative mx-auto w-[88px] h-[88px] mb-6">
                 {/* Glow ring */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#5E6AD2] to-[#7C5CFC] opacity-10 blur-md" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#06B6D4] opacity-10 blur-md" />
                 {/* Circle */}
-                <div className="relative w-full h-full rounded-full border border-[rgba(94,106,210,0.25)] bg-[rgba(94,106,210,0.06)] flex items-center justify-center">
-                  <step.icon size={28} className="text-[#5E6AD2]" />
+                <div className="relative w-full h-full rounded-full border border-[rgba(59,130,246,0.25)] bg-[rgba(59,130,246,0.06)] flex items-center justify-center">
+                  <step.icon size={28} className="text-[#3B82F6]" />
                 </div>
                 {/* Number badge */}
-                <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-[#5E6AD2] flex items-center justify-center">
+                <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-[#3B82F6] flex items-center justify-center">
                   <span className="text-xs font-bold text-white">
                     {step.number}
                   </span>
                 </div>
               </div>
 
-              <h3 className="text-lg font-semibold text-[#EDEDEF] mb-2 tracking-tight">
+              <h3 className="text-lg font-semibold text-[#EEEEF0] mb-2 tracking-tight">
                 {step.title}
               </h3>
-              <p className="text-sm text-[#8A8F98] leading-[1.7] max-w-[280px] mx-auto">
+              <p className="text-sm text-[#9CA3AF] leading-[1.7] max-w-[280px] mx-auto">
                 {step.description}
               </p>
             </motion.div>

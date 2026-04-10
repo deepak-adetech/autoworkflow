@@ -38,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="antialiased">
-      <body className="min-h-dvh flex flex-col bg-[#09090B] text-[#EDEDEF]">
+      <body className="min-h-dvh flex flex-col bg-[#0A0A0F] text-[#EEEEF0]">
         <NoiseOverlay />
         <Header />
         <main className="flex-1">{children}</main>

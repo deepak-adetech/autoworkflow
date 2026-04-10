@@ -35,17 +35,17 @@ const FOOTER_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[rgba(255,255,255,0.06)] bg-[#09090B]">
+    <footer className="border-t border-[rgba(255,255,255,0.06)] bg-[#0A0A0F]">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
           {/* Brand column */}
           <div className="md:col-span-4">
             <Logo size="md" />
-            <p className="mt-4 text-sm text-[#8A8F98] leading-relaxed max-w-xs">
+            <p className="mt-4 text-sm text-[#9CA3AF] leading-relaxed max-w-xs">
               AI-powered workflow automation for modern businesses. We build the
               agents that handle the work your team shouldn&apos;t have to.
             </p>
-            <p className="mt-6 text-xs text-[#55585E] italic">
+            <p className="mt-6 text-xs text-[#6B7280] italic">
               &quot;AI is all we do.&quot;
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function Footer() {
           {/* Link columns */}
           {FOOTER_LINKS.map((group) => (
             <div key={group.title} className="md:col-span-2 md:col-start-auto">
-              <h4 className="text-sm font-semibold text-[#EDEDEF] mb-4">
+              <h4 className="text-sm font-semibold text-[#EEEEF0] mb-4">
                 {group.title}
               </h4>
               <ul className="space-y-3">
@@ -61,7 +61,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm text-[#8A8F98] hover:text-[#EDEDEF] transition-colors duration-200 inline-flex items-center gap-1 group"
+                      className="text-sm text-[#9CA3AF] hover:text-[#EEEEF0] transition-colors duration-200 inline-flex items-center gap-1 group"
                     >
                       {link.label}
                       <ArrowUpRight
@@ -78,7 +78,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-[rgba(255,255,255,0.06)] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-[#55585E]">
+          <p className="text-xs text-[#6B7280]">
             &copy; {new Date().getFullYear()} AutoWorkflows.AI. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
@@ -86,7 +86,7 @@ export default function Footer() {
               <a
                 key={social}
                 href="#"
-                className="text-xs text-[#55585E] hover:text-[#8A8F98] transition-colors duration-200"
+                className="text-xs text-[#6B7280] hover:text-[#9CA3AF] transition-colors duration-200"
               >
                 {social}
               </a>
