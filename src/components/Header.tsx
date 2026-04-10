@@ -31,12 +31,12 @@ export default function Header() {
 
   return (
     <>
-      {/* Apple-style translucent nav — always frosted */}
+      {/* Transparent at top, translucent sticky on scroll */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
           scrolled
-            ? "apple-nav-scrolled"
-            : "apple-nav"
+            ? "bg-[rgba(10,10,15,0.8)] backdrop-blur-xl border-b border-[rgba(255,255,255,0.08)] shadow-[0_1px_12px_rgba(0,0,0,0.4)]"
+            : "bg-transparent border-b border-transparent"
         }`}
       >
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
