@@ -93,7 +93,7 @@ export default function Hero() {
       <LightBeams />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-5xl px-5 sm:px-8 pt-24 pb-16 text-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 pt-24 pb-16 text-center">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -111,11 +111,11 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* Headline */}
+        {/* Headline — full width */}
         <div className="mb-2">
           <BlurText
             text="We automate the processes"
-            className="text-[clamp(2rem,5vw,3.75rem)] font-bold leading-[1.1] tracking-[-0.025em] text-[#EEEEF0] justify-center"
+            className="text-[clamp(2.25rem,5.5vw,4.5rem)] font-bold leading-[1.08] tracking-[-0.03em] text-[#EEEEF0] justify-center"
             delay={80}
             animateBy="words"
             direction="bottom"
@@ -124,7 +124,7 @@ export default function Hero() {
         </div>
         <BlurText
           text="no software was built for."
-          className="text-[clamp(2rem,5vw,3.75rem)] font-bold leading-[1.1] tracking-[-0.025em] justify-center text-gradient-animated-inline"
+          className="text-[clamp(2.25rem,5.5vw,4.5rem)] font-bold leading-[1.08] tracking-[-0.03em] justify-center text-gradient-animated-inline"
           delay={100}
           animateBy="words"
           direction="bottom"
@@ -136,32 +136,45 @@ export default function Hero() {
           ]}
         />
 
-        {/* Sub */}
-        <motion.p
+        {/* Sub — split into two creative lines */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8, ease }}
-          className="text-base md:text-lg text-[#9CA3AF] leading-relaxed max-w-xl mx-auto mb-10 mt-7"
+          className="mt-10 mb-12 max-w-2xl mx-auto"
         >
-          Smart people shouldn&apos;t do dumb work. We close the gap between
-          &ldquo;AI can do this&rdquo; and &ldquo;AI actually does this here.&rdquo;{" "}
-          <span className="italic text-[#6B7280]">First workflow free.</span>
-        </motion.p>
+          <p className="text-lg md:text-xl font-medium text-[#EEEEF0] mb-2">
+            Smart people shouldn&apos;t do dumb work.
+          </p>
+          <p className="text-base md:text-lg text-[#9CA3AF] leading-relaxed">
+            We close the gap between &ldquo;AI can do this&rdquo;
+            <br className="hidden sm:block" />
+            and &ldquo;AI actually does this{" "}
+            <span className="text-[#EEEEF0] font-medium">here</span>.&rdquo;
+          </p>
+        </motion.div>
 
-        {/* CTA */}
+        {/* CTA — "First workflow free" is the hero action */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0, ease }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col items-center gap-5"
         >
-          <ShineButton href="#book" size="lg">
-            Book a free discovery call
-            <ArrowRight size={18} className="ml-1" />
-          </ShineButton>
-          <ShineButton href="#vision" variant="secondary" size="lg">
-            Why we exist
-          </ShineButton>
+          <a
+            href="#book"
+            className="group relative inline-flex items-center gap-3 px-10 py-4 rounded-full bg-[#3B82F6] text-white text-lg font-semibold shadow-[0_0_40px_-8px_rgba(59,130,246,0.5)] hover:shadow-[0_0_60px_-4px_rgba(59,130,246,0.6)] hover:bg-[#60A5FA] transition-all duration-300 shine-button"
+          >
+            First workflow free
+            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
+          </a>
+          <div className="flex items-center gap-6 text-sm text-[#6B7280]">
+            <span>No contracts</span>
+            <span className="w-1 h-1 rounded-full bg-[#6B7280] opacity-50" />
+            <span>No obligations</span>
+            <span className="w-1 h-1 rounded-full bg-[#6B7280] opacity-50" />
+            <span>We bet on our work</span>
+          </div>
         </motion.div>
       </div>
 
