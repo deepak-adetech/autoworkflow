@@ -7,30 +7,30 @@ const STEPS = [
   {
     icon: Phone,
     number: "01",
-    title: "Discovery",
+    title: "Map the Process",
     description:
-      "Book a free call. We audit your workflows, identify bottlenecks, and pinpoint the highest-ROI automation opportunities.",
+      "We sit down and understand your specific workflow — not a generic version of it. Where does data come from? Where does it go? What breaks?",
   },
   {
     icon: Compass,
     number: "02",
-    title: "Design",
+    title: "Design the Right Approach",
     description:
-      "We architect your solution with a clear scope, timeline, and expected impact. You approve before we write a single line of code.",
+      "Not the trendy approach. The right one. If a simple script solves it, that's what we propose. If it needs AI, we'll explain why.",
   },
   {
     icon: Rocket,
     number: "03",
-    title: "Build & Deploy",
+    title: "Build the Thing",
     description:
-      "Our engineers build, test, and deploy your automation. First workflow is on us — see the results before you invest a dollar.",
+      "We build, test, and deploy in your environment. First workflow is on us — you see real results before you invest a dollar.",
   },
   {
     icon: TrendingUp,
     number: "04",
-    title: "Optimize & Scale",
+    title: "Stay & Improve",
     description:
-      "We monitor performance, fine-tune accuracy, and scale your automations as your business grows. Continuous improvement, built in.",
+      "We don't deliver and disappear. We monitor, optimize, and expand your automations as your business evolves. Builders who stay.",
   },
 ];
 
@@ -61,11 +61,12 @@ export default function HowItWorks() {
             How It Works
           </p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.025em] mb-5">
-            From chaos to{" "}
-            <span className="text-gradient">autopilot</span>
+            Process first.{" "}
+            <span className="text-gradient">Technology second.</span>
           </h2>
           <p className="text-[#9CA3AF] text-lg leading-relaxed max-w-2xl mx-auto">
-            Four steps. Two weeks. One less headache on your plate forever.
+            We don&apos;t start with a solution looking for a problem. We start with
+            your workflow and work backward to the right tool.
           </p>
         </motion.div>
 

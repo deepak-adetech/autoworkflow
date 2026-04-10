@@ -22,37 +22,37 @@ const SERVICES: Service[] = [
     icon: Bot,
     title: "Custom AI Agents",
     description:
-      "Autonomous agents that handle complex workflows end-to-end. Customer support, data processing, decision-making — your AI workforce never sleeps.",
+      "Purpose-built agents for your specific workflows. Not generic bots — agents that understand your process, handle edge cases, and actually work in production.",
   },
   {
     icon: Workflow,
     title: "Workflow Automation",
     description:
-      "Connect your tools, eliminate manual handoffs, and let processes run themselves. From intake to output, zero human bottlenecks.",
+      "The boring stuff nobody built software for — approval chains, data handoffs, report assembly. We map it, automate it, and free your team to do real work.",
   },
   {
     icon: FileSearch,
     title: "Intelligent Document Processing",
     description:
-      "Extract, classify, and route documents in seconds. Invoices, contracts, applications — AI reads them so your team doesn't have to.",
+      "Your team shouldn't read invoices, contracts, or applications manually. We build systems that extract, classify, and route documents — tailored to your formats.",
   },
   {
     icon: BarChart3,
     title: "Predictive Analytics",
     description:
-      "Turn raw data into decisions. Custom dashboards, anomaly detection, and automated reports that surface what actually matters.",
+      "Stop manually assembling reports from five different tools. We build pipelines that pull, transform, and surface insights — automatically, on your schedule.",
   },
   {
     icon: MessageSquare,
     title: "Conversational AI",
     description:
-      "Deploy chatbots and voice agents that genuinely understand context. Handle 80% of inquiries, escalate the rest intelligently.",
+      "Not another generic chatbot. We build conversational agents trained on your knowledge base, your tone, your escalation rules — handling 80% so your team handles what matters.",
   },
   {
     icon: Plug,
     title: "API & System Integration",
     description:
-      "Bridge the gaps between your tools. CRM, ERP, databases, SaaS platforms — we build the AI-powered glue that makes everything talk.",
+      "Your CRM doesn't talk to your ERP. Your ERP doesn't talk to your database. We build the glue — using whatever combination of tools makes sense, not whatever's trendy.",
   },
 ];
 
@@ -71,15 +71,15 @@ export default function Services() {
           className="text-center mb-16 md:mb-20"
         >
           <p className="text-xs font-medium text-[#3B82F6] tracking-widest uppercase mb-4">
-            What We Build
+            What We Actually Build
           </p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.025em] mb-5">
-            AI solutions that{" "}
-            <span className="text-gradient">actually ship</span>
+            Not decks. Not demos.{" "}
+            <span className="text-gradient">Working automations.</span>
           </h2>
           <p className="text-[#9CA3AF] text-lg leading-relaxed max-w-2xl mx-auto">
-            We don&apos;t do PowerPoint decks. We build production-ready automations
-            that save your team real hours every week.
+            We build the specific automation your business needs — deployed in your
+            stack, solving your workflow, saving your team real hours every week.
           </p>
         </motion.div>
 

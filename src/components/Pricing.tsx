@@ -22,7 +22,7 @@ const TIERS: PricingTier[] = [
     price: "$0",
     period: "First workflow free",
     description:
-      "See the results before you invest. We automate your first workflow completely free — no strings, no contracts.",
+      "We bet on our work. Your first workflow — mapped, built, and deployed — completely free. See the results before you spend a dollar.",
     features: [
       "1 fully automated workflow",
       "End-to-end build & deployment",
@@ -41,7 +41,7 @@ const TIERS: PricingTier[] = [
     price: "$3,000 – $9,000",
     period: "per workflow",
     description:
-      "Production-grade AI automations built for scale. Complex integrations, custom logic, and ongoing optimization.",
+      "Your specific workflow, built by people who understand the problem. Not a template — a custom automation designed for how your team actually works.",
     features: [
       "Custom AI agent development",
       "Unlimited tool integrations",
@@ -62,7 +62,7 @@ const TIERS: PricingTier[] = [
     price: "Custom",
     period: "tailored to your needs",
     description:
-      "Full-scale automation programs. Multiple workflows, dedicated team, and ongoing partnership for continuous improvement.",
+      "For teams ready to automate across the org. Dedicated builders, multiple workflows, and an ongoing partnership — not a project with an end date.",
     features: [
       "Unlimited workflows",
       "Dedicated automation team",
@@ -110,8 +110,8 @@ export default function Pricing() {
             <span className="text-gradient">Serious results.</span>
           </h2>
           <p className="text-[#9CA3AF] text-lg leading-relaxed max-w-2xl mx-auto">
-            Start free. Scale when you&apos;re ready. Every engagement begins
-            with a free workflow so you can see the value firsthand.
+            Every engagement starts with a free workflow. We prove the value
+            before you invest — because builders should bet on their work.
           </p>
         </motion.div>
 

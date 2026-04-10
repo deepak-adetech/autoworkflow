@@ -103,7 +103,7 @@ export default function Hero() {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] animate-pulse" />
           <ShinyText
-            text="AI-Powered Automated Workflows"
+            text="Builders, not consultants"
             className="text-xs font-medium tracking-wide uppercase"
             color="#9CA3AF"
             shineColor="#EEEEF0"
@@ -114,7 +114,7 @@ export default function Hero() {
         {/* Headline */}
         <div className="mb-2">
           <BlurText
-            text="We automate the work"
+            text="We automate the processes"
             className="text-[clamp(2.5rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.025em] text-[#EEEEF0] justify-center"
             delay={80}
             animateBy="words"
@@ -123,7 +123,7 @@ export default function Hero() {
           />
         </div>
         <BlurText
-          text="your team dreads."
+          text="no software was built for."
           className="text-[clamp(2.5rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.025em] justify-center text-gradient-animated-inline"
           delay={100}
           animateBy="words"
@@ -141,9 +141,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8, ease }}
-          className="text-lg md:text-xl text-[#9CA3AF] leading-relaxed max-w-2xl mx-auto mb-10 mt-8 italic"
+          className="text-lg md:text-xl text-[#9CA3AF] leading-relaxed max-w-2xl mx-auto mb-10 mt-8"
         >
-          First workflow automated free — no strings attached.
+          Smart people shouldn&apos;t do dumb work. We close the gap between &ldquo;AI can do this&rdquo; and &ldquo;AI actually does this here.&rdquo;{" "}
+          <span className="italic text-[#6B7280]">First workflow automated free.</span>
         </motion.p>
 
         {/* CTA */}
@@ -154,11 +155,11 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <ShineButton href="#book" size="lg">
-            Book a free strategy call
+            Book a free discovery call
             <ArrowRight size={18} className="ml-1" />
           </ShineButton>
-          <ShineButton href="#services" variant="secondary" size="lg">
-            See what we build
+          <ShineButton href="#vision" variant="secondary" size="lg">
+            Why we exist
           </ShineButton>
         </motion.div>
       </div>

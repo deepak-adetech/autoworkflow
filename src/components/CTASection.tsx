@@ -30,31 +30,31 @@ export default function CTASection() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(59,130,246,0.25)] bg-[rgba(59,130,246,0.06)] mb-8">
             <Sparkles size={14} className="text-[#3B82F6]" />
             <span className="text-xs font-medium text-[#3B82F6]">
-              First workflow free
+              First workflow on us
             </span>
           </div>
 
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.025em] mb-6 leading-[1.1]">
-            Ready to stop drowning
+            Your processes deserve better
             <br />
-            <span className="text-gradient-animated">in manual work?</span>
+            <span className="text-gradient-animated">than manual work.</span>
           </h2>
 
           <p className="text-lg md:text-xl text-[#9CA3AF] leading-relaxed max-w-2xl mx-auto mb-10">
-            Book a free strategy call. We&apos;ll audit your workflows and
-            automate your first one free. No contracts, no obligations — just
-            results.
+            Tell us what workflow is eating your team&apos;s time. We&apos;ll map it,
+            build the automation, and deploy it — the first one&apos;s free. We bet on
+            our work.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <ShineButton href="#" size="lg">
-              Book your free strategy call
+              Book a free discovery call
               <ArrowRight size={18} className="ml-1" />
             </ShineButton>
           </div>
 
           <p className="mt-8 text-sm text-[#6B7280]">
-            No contracts. No obligations. Just results.
+            No decks. No demos. We build the thing.
           </p>
         </motion.div>
       </div>

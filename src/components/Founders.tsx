@@ -15,7 +15,7 @@ const FOUNDERS = [
   {
     name: "Deepak Sharma",
     role: "Co-Founder",
-    bio: "Former automation architect who saw too many businesses drowning in manual processes. Built AutoWorkflows to fix that — one AI agent at a time.",
+    bio: "Saw too many smart teams stuck doing dumb work — copying data, chasing approvals, assembling reports. Built AutoWorkflow.AI to close the gap between what AI can do and what it actually does inside a business.",
     initials: "DS",
     gradient: "from-[#3B82F6] to-[#06B6D4]",
     linkedin: "https://www.linkedin.com/in/deepak-sharma",
@@ -23,7 +23,7 @@ const FOUNDERS = [
   {
     name: "Pranav Parekh",
     role: "Co-Founder",
-    bio: "Digital strategist turned AI evangelist. Obsessed with helping businesses scale without scaling headcount. Believes the best workflow is the one nobody has to do.",
+    bio: "Spent years watching consultancies deliver decks and disappear. Co-founded AutoWorkflow.AI to be the builders who stay — loyal to the problem, not to any vendor or technology.",
     initials: "PP",
     gradient: "from-[#06B6D4] to-[#22D3EE]",
     linkedin: "https://www.linkedin.com/in/pranav-parekh",
@@ -57,12 +57,12 @@ export default function Founders() {
             Leadership
           </p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.025em] mb-5">
-            Learn from founders{" "}
-            <span className="text-gradient">who&apos;ve done it</span>
+            Founders who&apos;ve{" "}
+            <span className="text-gradient">been in your shoes</span>
           </h2>
           <p className="text-[#9CA3AF] text-lg leading-relaxed max-w-2xl mx-auto">
-            We didn&apos;t just study automation — we lived it. Now we build the AI
-            systems we wish existed when we were in your shoes.
+            We didn&apos;t start with a technology. We started with a frustration —
+            watching capable teams waste hours on work that machines should handle.
           </p>
         </motion.div>
 

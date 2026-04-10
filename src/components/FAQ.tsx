@@ -6,28 +6,28 @@ import { ChevronDown } from "lucide-react";
 
 const FAQS = [
   {
-    q: "What types of workflows can you automate?",
-    a: "Everything from customer onboarding and document processing to inventory management and reporting. If it's repetitive and rule-based — or even semi-structured — we can automate it. We've automated workflows across finance, healthcare, e-commerce, real estate, legal, and SaaS.",
+    q: "Are you an AI consultancy?",
+    a: "No. Consultancies deliver decks and disappear. We're builders. We sit down, understand your specific process, and build the automation. If you need a strategy deck, we're not the right fit. If you need the thing built, we are.",
   },
   {
-    q: "How long does it take to deploy?",
-    a: "Most automations go live within 1–2 weeks. Complex multi-system integrations may take 3–4 weeks. We move fast without cutting corners — and you'll see a working prototype before we go to production.",
+    q: "Why not just use an off-the-shelf SaaS tool?",
+    a: "If one exists for your workflow, we'll tell you — and we'll help you set it up. We don't build what already exists. But most of the processes companies struggle with are too specific for generic software. That's the gap we fill.",
   },
   {
     q: "What does \"first workflow free\" actually mean?",
-    a: "We'll automate your first workflow at no cost — no contracts, no obligations. It's our way of proving value upfront. If you love the results, we'll discuss scaling. If not, you keep the automation and walk away.",
+    a: "We automate your first workflow at zero cost — no contracts, no obligations. It's how we prove we're different. If the results speak, we'll discuss scaling. If not, you keep the automation and walk away. We bet on our work.",
   },
   {
-    q: "Do you work with our existing tech stack?",
-    a: "Absolutely. We integrate with 200+ tools including Salesforce, HubSpot, Slack, Google Workspace, Notion, Airtable, and custom APIs. No rip-and-replace required. We build on top of what you already use.",
+    q: "Do you only use AI? What if a simpler solution works?",
+    a: "We're loyal to the problem, not to any technology. If a simple script solves it, that's what we build. If it needs GPT-4 and a custom pipeline, we'll explain why. The right tool is whatever actually works for your process.",
   },
   {
-    q: "What happens after deployment?",
-    a: "We provide monitoring, maintenance, and optimization as part of our service. Your automations get smarter over time, and we're always a Slack message away. Think of us as your ongoing AI engineering partner, not a one-and-done vendor.",
+    q: "What happens after you build it?",
+    a: "We stay. We monitor, optimize, and improve your automations as your business evolves. We're not a one-and-done vendor — we're ongoing partners. Builders who stay, not consultants who leave.",
   },
   {
-    q: "How do you handle data security?",
-    a: "Enterprise-grade security is non-negotiable. SOC 2 compliant processes, encrypted data handling, and we never train models on your data. Your data stays yours — always. We can also work within your VPC or on-premise infrastructure.",
+    q: "How long does it take?",
+    a: "Most workflows go live within 1–2 weeks. Complex multi-system automations may take 3–4 weeks. We move fast because we understand the process first — the building part is the easy part when the mapping is done right.",
   },
 ];
 
