@@ -124,6 +124,15 @@ h1, h2, h3, h4, h5, h6 {
   to { transform: translateX(100%) skewX(-15deg); }
 }
 
+/* ─── Apple-style Nav ─── */
+.apple-nav {
+  background: rgba(10, 10, 15, 0.55);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+}
+
 /* ─── Glassmorphism ─── */
 .glass-card {
   background: var(--color-glass-bg);
