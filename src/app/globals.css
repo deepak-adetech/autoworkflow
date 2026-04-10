@@ -78,6 +78,30 @@ h1, h2, h3, h4, h5, h6 {
   to { background-position: 200% center; }
 }
 
+/* Gradient text for BlurText inline spans */
+.text-gradient-animated-inline span {
+  background: linear-gradient(
+    90deg,
+    #5E6AD2 0%,
+    #7C5CFC 16%,
+    #A78BFA 33%,
+    #818CF8 50%,
+    #5E6AD2 66%,
+    #7C5CFC 83%,
+    #A78BFA 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-flow 4s linear infinite;
+}
+
+/* ─── Spin for orbiting rings ─── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 /* ─── AI Breathing ─── */
 .ai-breathe {
   animation: ai-breathe 3s ease-in-out infinite;

@@ -2,15 +2,146 @@
 
 import { motion } from "motion/react";
 
-const INTEGRATIONS = [
-  "OpenAI", "Slack", "Zapier", "HubSpot", "Salesforce",
-  "Google Workspace", "Notion", "Airtable", "Stripe",
-  "AWS", "Make", "n8n", "Twilio", "Shopify", "Jira",
-  "PostgreSQL", "Snowflake", "GitHub",
+/* ─── Client Logo SVGs ─── */
+/* Simple, clean text-mark logos rendered as SVG for crisp display */
+
+function LogoSiemens() {
+  return (
+    <svg viewBox="0 0 120 24" fill="none" className="h-5 md:h-6 w-auto">
+      <text x="0" y="18" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="600" letterSpacing="-0.5" fill="currentColor">
+        SIEMENS
+      </text>
+    </svg>
+  );
+}
+
+function LogoBosch() {
+  return (
+    <svg viewBox="0 0 100 24" fill="none" className="h-5 md:h-6 w-auto">
+      <text x="0" y="18" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" letterSpacing="1" fill="currentColor">
+        BOSCH
+      </text>
+    </svg>
+  );
+}
+
+function LogoTata() {
+  return (
+    <svg viewBox="0 0 76 24" fill="none" className="h-5 md:h-6 w-auto">
+      <text x="0" y="18" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" letterSpacing="2" fill="currentColor">
+        TATA
+      </text>
+    </svg>
+  );
+}
+
+function LogoHCL() {
+  return (
+    <svg viewBox="0 0 56 24" fill="none" className="h-5 md:h-6 w-auto">
+      <text x="0" y="18" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" letterSpacing="1.5" fill="currentColor">
+        HCL
+      </text>
+    </svg>
+  );
+}
+
+function LogoWipro() {
+  return (
+    <svg viewBox="0 0 96 24" fill="none" className="h-5 md:h-6 w-auto">
+      <text x="0" y="18" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="600" letterSpacing="0.5" fill="currentColor">
+        Wipro
+      </text>
+    </svg>
+  );
+}
+
+function LogoInfosys() {
+  return (
+    <svg viewBox="0 0 110 24" fill="none" className="h-5 md:h-6 w-auto">
+      <text x="0" y="18" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="600" letterSpacing="-0.3" fill="currentColor">
+        Infosys
+      </text>
+    </svg>
+  );
+}
+
+function LogoLT() {
+  return (
+    <svg viewBox="0 0 56 24" fill="none" className="h-5 md:h-6 w-auto">
+      <text x="0" y="18" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" letterSpacing="1" fill="currentColor">
+        L&amp;T
+      </text>
+    </svg>
+  );
+}
+
+function LogoMahindra() {
+  return (
+    <svg viewBox="0 0 140 24" fill="none" className="h-5 md:h-6 w-auto">
+      <text x="0" y="18" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="600" letterSpacing="-0.3" fill="currentColor">
+        MAHINDRA
+      </text>
+    </svg>
+  );
+}
+
+function LogoGodrej() {
+  return (
+    <svg viewBox="0 0 110 24" fill="none" className="h-5 md:h-6 w-auto">
+      <text x="0" y="18" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="600" letterSpacing="0.3" fill="currentColor">
+        Godrej
+      </text>
+    </svg>
+  );
+}
+
+function LogoReliance() {
+  return (
+    <svg viewBox="0 0 140 24" fill="none" className="h-5 md:h-6 w-auto">
+      <text x="0" y="18" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="600" letterSpacing="-0.3" fill="currentColor">
+        RELIANCE
+      </text>
+    </svg>
+  );
+}
+
+function LogoTechMahindra() {
+  return (
+    <svg viewBox="0 0 200 24" fill="none" className="h-5 md:h-6 w-auto">
+      <text x="0" y="18" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="600" letterSpacing="-0.3" fill="currentColor">
+        Tech Mahindra
+      </text>
+    </svg>
+  );
+}
+
+function LogoBajaj() {
+  return (
+    <svg viewBox="0 0 96 24" fill="none" className="h-5 md:h-6 w-auto">
+      <text x="0" y="18" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="700" letterSpacing="0.5" fill="currentColor">
+        BAJAJ
+      </text>
+    </svg>
+  );
+}
+
+const CLIENT_LOGOS = [
+  { name: "Siemens", Logo: LogoSiemens },
+  { name: "Bosch", Logo: LogoBosch },
+  { name: "Tata", Logo: LogoTata },
+  { name: "HCL", Logo: LogoHCL },
+  { name: "Wipro", Logo: LogoWipro },
+  { name: "Infosys", Logo: LogoInfosys },
+  { name: "L&T", Logo: LogoLT },
+  { name: "Mahindra", Logo: LogoMahindra },
+  { name: "Godrej", Logo: LogoGodrej },
+  { name: "Reliance", Logo: LogoReliance },
+  { name: "Tech Mahindra", Logo: LogoTechMahindra },
+  { name: "Bajaj", Logo: LogoBajaj },
 ];
 
 export default function TrustedBy() {
-  const doubled = [...INTEGRATIONS, ...INTEGRATIONS];
+  const doubled = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
 
   return (
     <section className="relative border-y border-[rgba(255,255,255,0.04)] bg-[rgba(255,255,255,0.01)] py-12 overflow-hidden">
@@ -21,7 +152,7 @@ export default function TrustedBy() {
         transition={{ duration: 0.6 }}
         className="text-center text-xs font-medium text-[#55585E] tracking-widest uppercase mb-8"
       >
-        Integrates with the tools you already use
+        Trusted by industry leaders
       </motion.p>
 
       {/* Marquee */}
@@ -31,16 +162,13 @@ export default function TrustedBy() {
         <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#09090B] to-transparent" />
 
         <div className="flex overflow-hidden">
-          <div className="marquee-track flex shrink-0 gap-8 items-center">
-            {doubled.map((name, i) => (
+          <div className="marquee-track flex shrink-0 gap-12 md:gap-16 items-center">
+            {doubled.map((client, i) => (
               <div
-                key={`${name}-${i}`}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] shrink-0 hover:border-[rgba(94,106,210,0.2)] transition-colors duration-200"
+                key={`${client.name}-${i}`}
+                className="flex items-center shrink-0 text-[#55585E] hover:text-[#8A8F98] transition-colors duration-300 opacity-60 hover:opacity-90"
               >
-                <div className="w-2 h-2 rounded-full bg-gradient-to-br from-[#5E6AD2] to-[#7C5CFC] opacity-60" />
-                <span className="text-sm text-[#8A8F98] whitespace-nowrap font-medium">
-                  {name}
-                </span>
+                <client.Logo />
               </div>
             ))}
           </div>

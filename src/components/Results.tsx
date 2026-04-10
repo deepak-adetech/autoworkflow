@@ -1,8 +1,8 @@
 "use client";
 
-import { motion, useInView } from "motion/react";
-import { useRef, useEffect, useState } from "react";
-import { Quote } from "lucide-react";
+import { motion, useInView, AnimatePresence } from "motion/react";
+import { useRef, useEffect, useState, useCallback } from "react";
+import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
 /* ─── Animated Counter ─── */
 function AnimatedNumber({
@@ -22,27 +22,24 @@ function AnimatedNumber({
 
   useEffect(() => {
     if (!inView) return;
-    let start = 0;
     const startTime = performance.now();
+    let raf: number;
 
     const tick = (now: number) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Expo ease out
       const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.floor(eased * value);
-
-      setDisplay(current);
+      setDisplay(Math.floor(eased * value));
 
       if (progress < 1) {
-        start = requestAnimationFrame(tick);
+        raf = requestAnimationFrame(tick);
       } else {
         setDisplay(value);
       }
     };
 
-    start = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(start);
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
   }, [inView, value, duration]);
 
   return (
@@ -62,8 +59,185 @@ const METRICS = [
   { prefix: "<", value: 14, suffix: " Days", label: "Average Deployment" },
 ];
 
+/* ─── Testimonials ─── */
+const TESTIMONIALS = [
+  {
+    quote:
+      "AutoWorkflows automated our entire client onboarding pipeline in 10 days. What used to take our team 6 hours per client now takes 12 minutes. We've reclaimed over 200 hours a month — and our clients get a better experience.",
+    name: "Sarah Rodriguez",
+    title: "COO, ScalePoint Financial",
+    initials: "SR",
+  },
+  {
+    quote:
+      "We were drowning in manual invoice processing. AutoWorkflows built an AI agent that reads, classifies, and routes invoices automatically. Error rates dropped 94% and our AP team finally has bandwidth to focus on strategy.",
+    name: "Michael Chen",
+    title: "CFO, NovaBridge Logistics",
+    initials: "MC",
+  },
+  {
+    quote:
+      "The team automated our entire lead qualification workflow. Our sales reps only talk to pre-qualified prospects now. Conversion rates are up 47% and we're closing deals twice as fast.",
+    name: "Priya Sharma",
+    title: "VP Sales, Meridian SaaS",
+    initials: "PS",
+  },
+  {
+    quote:
+      "They delivered our first automation in 8 days — for free. It saved us 30 hours a week on report generation alone. We immediately signed up for three more workflows. Best vendor decision we've made.",
+    name: "David Park",
+    title: "CTO, Helix Health Systems",
+    initials: "DP",
+  },
+  {
+    quote:
+      "Our customer support was overwhelmed with repetitive tickets. AutoWorkflows deployed a conversational AI agent that handles 78% of incoming requests. CSAT scores went up and our support team's burnout went down.",
+    name: "Elena Vasquez",
+    title: "Head of CX, Lumina Retail",
+    initials: "EV",
+  },
+];
+
 const ease = [0.16, 1, 0.3, 1] as const;
 
+/* ─── Testimonial Carousel ─── */
+function TestimonialCarousel() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const timerRef = useRef<ReturnType<typeof setInterval>>(null);
+
+  const goTo = useCallback(
+    (index: number) => {
+      setDirection(index > current ? 1 : -1);
+      setCurrent(index);
+    },
+    [current]
+  );
+
+  const next = useCallback(() => {
+    setDirection(1);
+    setCurrent((i) => (i + 1) % TESTIMONIALS.length);
+  }, []);
+
+  const prev = useCallback(() => {
+    setDirection(-1);
+    setCurrent(
+      (i) => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length
+    );
+  }, []);
+
+  // Auto-rotate
+  useEffect(() => {
+    timerRef.current = setInterval(next, 6000);
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [next]);
+
+  // Reset timer on manual interaction
+  const handleManual = useCallback(
+    (fn: () => void) => {
+      if (timerRef.current) clearInterval(timerRef.current);
+      fn();
+      timerRef.current = setInterval(next, 6000);
+    },
+    [next]
+  );
+
+  const t = TESTIMONIALS[current];
+
+  const variants = {
+    enter: (d: number) => ({
+      x: d > 0 ? 60 : -60,
+      opacity: 0,
+      filter: "blur(4px)",
+    }),
+    center: { x: 0, opacity: 1, filter: "blur(0px)" },
+    exit: (d: number) => ({
+      x: d > 0 ? -60 : 60,
+      opacity: 0,
+      filter: "blur(4px)",
+    }),
+  };
+
+  return (
+    <div className="glass-card p-8 md:p-12 max-w-4xl mx-auto relative overflow-hidden">
+      {/* Accent glow */}
+      <div
+        className="absolute -top-20 -right-20 w-64 h-64 rounded-full opacity-[0.06] blur-[80px] pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, #5E6AD2, transparent)",
+        }}
+      />
+
+      {/* Navigation arrows */}
+      <button
+        onClick={() => handleManual(prev)}
+        className="absolute left-3 md:left-5 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#55585E] hover:text-[#EDEDEF] hover:border-[rgba(94,106,210,0.3)] transition-all duration-200 cursor-pointer"
+        aria-label="Previous testimonial"
+      >
+        <ChevronLeft size={16} />
+      </button>
+      <button
+        onClick={() => handleManual(next)}
+        className="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#55585E] hover:text-[#EDEDEF] hover:border-[rgba(94,106,210,0.3)] transition-all duration-200 cursor-pointer"
+        aria-label="Next testimonial"
+      >
+        <ChevronRight size={16} />
+      </button>
+
+      {/* Testimonial content */}
+      <div className="px-6 md:px-10 min-h-[260px] md:min-h-[220px] flex flex-col justify-between">
+        <Quote size={28} className="text-[#5E6AD2] opacity-40 mb-5 shrink-0" />
+
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={current}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <blockquote className="text-base md:text-lg text-[#EDEDEF] leading-[1.7] font-medium mb-8">
+              &ldquo;{t.quote}&rdquo;
+            </blockquote>
+            <div className="flex items-center gap-4">
+              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#5E6AD2] to-[#7C5CFC] flex items-center justify-center text-white font-bold text-xs shrink-0">
+                {t.initials}
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-[#EDEDEF]">
+                  {t.name}
+                </p>
+                <p className="text-sm text-[#8A8F98]">{t.title}</p>
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Dots */}
+      <div className="flex items-center justify-center gap-2 mt-8">
+        {TESTIMONIALS.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => handleManual(() => goTo(i))}
+            className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+              i === current
+                ? "w-6 bg-[#5E6AD2]"
+                : "w-1.5 bg-[rgba(255,255,255,0.15)] hover:bg-[rgba(255,255,255,0.3)]"
+            }`}
+            aria-label={`Go to testimonial ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ─── Results Section ─── */
 export default function Results() {
   return (
     <section id="results" className="section-padding relative">
@@ -84,8 +258,8 @@ export default function Results() {
             <span className="text-gradient">speak for themselves</span>
           </h2>
           <p className="text-[#8A8F98] text-lg leading-relaxed max-w-2xl mx-auto">
-            We measure success in hours returned to your team and dollars kept in
-            your pocket.
+            We measure success in hours returned to your team and dollars kept
+            in your pocket.
           </p>
         </motion.div>
 
@@ -102,7 +276,6 @@ export default function Results() {
             >
               <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-2 tracking-tight">
                 {metric.value === 3.2 ? (
-                  /* Non-integer: just display directly */
                   <span>3.2{metric.suffix}</span>
                 ) : (
                   <AnimatedNumber
@@ -119,39 +292,14 @@ export default function Results() {
           ))}
         </div>
 
-        {/* Testimonial */}
+        {/* Testimonial Carousel */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7, ease }}
-          className="glass-card p-8 md:p-12 max-w-4xl mx-auto relative overflow-hidden"
         >
-          {/* Accent glow */}
-          <div
-            className="absolute -top-20 -right-20 w-64 h-64 rounded-full opacity-[0.06] blur-[80px] pointer-events-none"
-            style={{ background: "radial-gradient(circle, #5E6AD2, transparent)" }}
-          />
-
-          <Quote size={32} className="text-[#5E6AD2] opacity-40 mb-6" />
-          <blockquote className="text-lg md:text-xl text-[#EDEDEF] leading-[1.7] font-medium mb-8">
-            &quot;AutoWorkflows automated our entire client onboarding pipeline in 10 days.
-            What used to take our team 6 hours per client now takes 12 minutes. We&apos;ve
-            reclaimed over 200 hours a month — and our clients get a better experience.&quot;
-          </blockquote>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#5E6AD2] to-[#7C5CFC] flex items-center justify-center text-white font-bold text-sm">
-              SR
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-[#EDEDEF]">
-                Sarah Rodriguez
-              </p>
-              <p className="text-sm text-[#8A8F98]">
-                COO, ScalePoint Financial
-              </p>
-            </div>
-          </div>
+          <TestimonialCarousel />
         </motion.div>
       </div>
     </section>

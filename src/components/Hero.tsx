@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import ShineButton from "./ShineButton";
+import BlurText from "./reactbits/BlurText";
+import ShinyText from "./reactbits/ShinyText";
 
 /* ─── Canvas Waves ─── */
 function WaveCanvas() {
@@ -49,8 +51,11 @@ function WaveCanvas() {
         for (let x = 0; x <= w(); x += 2) {
           const y =
             baseline +
-            Math.sin(x * wave.freq + frame * wave.speed + wave.phase) * wave.amp +
-            Math.sin(x * wave.freq * 1.8 + frame * wave.speed * 0.7) * wave.amp * 0.5;
+            Math.sin(x * wave.freq + frame * wave.speed + wave.phase) *
+              wave.amp +
+            Math.sin(x * wave.freq * 1.8 + frame * wave.speed * 0.7) *
+              wave.amp *
+              0.5;
 
           if (x === 0) ctx.moveTo(x, y);
           else ctx.lineTo(x, y);
@@ -62,7 +67,10 @@ function WaveCanvas() {
 
         const grad = ctx.createLinearGradient(0, h() * 0.6, 0, h());
         grad.addColorStop(0, `rgba(94, 106, 210, ${wave.opacity})`);
-        grad.addColorStop(0.5, `rgba(124, 92, 252, ${wave.opacity * 0.6})`);
+        grad.addColorStop(
+          0.5,
+          `rgba(124, 92, 252, ${wave.opacity * 0.6})`
+        );
         grad.addColorStop(1, "rgba(94, 106, 210, 0)");
         ctx.fillStyle = grad;
         ctx.fill();
@@ -92,15 +100,16 @@ function WaveCanvas() {
 /* ─── Ambient Blobs ─── */
 function AmbientBlobs() {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-      {/* Top-center spotlight */}
+    <div
+      className="absolute inset-0 overflow-hidden pointer-events-none"
+      aria-hidden="true"
+    >
       <div
         className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full opacity-[0.07]"
         style={{
           background: "radial-gradient(ellipse, #5E6AD2 0%, transparent 70%)",
         }}
       />
-      {/* Floating blob 1 */}
       <div
         className="absolute top-[10%] left-[15%] w-[500px] h-[500px] rounded-full opacity-[0.04] blur-[100px]"
         style={{
@@ -108,7 +117,6 @@ function AmbientBlobs() {
           animation: "blob-drift-1 20s ease-in-out infinite",
         }}
       />
-      {/* Floating blob 2 */}
       <div
         className="absolute top-[30%] right-[10%] w-[400px] h-[400px] rounded-full opacity-[0.05] blur-[80px]"
         style={{
@@ -116,7 +124,6 @@ function AmbientBlobs() {
           animation: "blob-drift-2 25s ease-in-out infinite",
         }}
       />
-      {/* Floating blob 3 */}
       <div
         className="absolute bottom-[15%] left-[35%] w-[600px] h-[400px] rounded-full opacity-[0.03] blur-[120px]"
         style={{
@@ -158,7 +165,10 @@ function FloatingParticles() {
   );
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    <div
+      className="absolute inset-0 pointer-events-none overflow-hidden"
+      aria-hidden="true"
+    >
       {particles.map((p) => (
         <div
           key={p.id}
@@ -177,6 +187,36 @@ function FloatingParticles() {
   );
 }
 
+/* ─── Orbiting Rings ─── */
+function OrbitingRings() {
+  return (
+    <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center" aria-hidden="true">
+      {[380, 520, 680].map((size, i) => (
+        <div
+          key={size}
+          className="absolute rounded-full border border-[rgba(94,106,210,0.06)]"
+          style={{
+            width: size,
+            height: size,
+            animation: `spin ${40 + i * 15}s linear infinite ${i % 2 === 0 ? "" : "reverse"}`,
+          }}
+        >
+          <div
+            className="absolute w-2 h-2 rounded-full bg-[#5E6AD2]"
+            style={{
+              top: 0,
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              opacity: 0.4 + i * 0.15,
+              boxShadow: "0 0 8px rgba(94,106,210,0.5)",
+            }}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 /* ─── Hero ─── */
 export default function Hero() {
   const ease = [0.16, 1, 0.3, 1] as const;
@@ -187,6 +227,7 @@ export default function Hero() {
       <AmbientBlobs />
       <DotGrid />
       <FloatingParticles />
+      <OrbitingRings />
       <WaveCanvas />
 
       {/* Content */}
@@ -199,29 +240,46 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)] mb-8"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#5E6AD2] animate-pulse" />
-          <span className="text-xs font-medium text-[#8A8F98] tracking-wide uppercase">
-            AI-Powered Automation
-          </span>
+          <ShinyText
+            text="AI-Powered Automated Workflows"
+            className="text-xs font-medium tracking-wide uppercase"
+            color="#8A8F98"
+            shineColor="#EDEDEF"
+            speed={3}
+          />
         </motion.div>
 
-        {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1, ease }}
-          className="text-[clamp(2.5rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.025em] mb-6"
-        >
-          We automate the work
-          <br />
-          <span className="text-gradient-animated">your team dreads.</span>
-        </motion.h1>
+        {/* Headline — BlurText animated reveal */}
+        <div className="mb-2">
+          <BlurText
+            text="We automate the work"
+            className="text-[clamp(2.5rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.025em] text-[#EDEDEF] justify-center"
+            delay={80}
+            animateBy="words"
+            direction="bottom"
+            stepDuration={0.4}
+          />
+        </div>
+        <BlurText
+          text="your team dreads."
+          className="text-[clamp(2.5rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.025em] justify-center text-gradient-animated-inline"
+          delay={100}
+          animateBy="words"
+          direction="bottom"
+          stepDuration={0.45}
+          animationFrom={{ filter: "blur(12px)", opacity: 0, y: 30 }}
+          animationTo={[
+            { filter: "blur(4px)", opacity: 0.6, y: 5 },
+            { filter: "blur(0px)", opacity: 1, y: 0 },
+          ]}
+        />
 
         {/* Sub */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25, ease }}
-          className="text-lg md:text-xl text-[#8A8F98] leading-relaxed max-w-2xl mx-auto mb-10 italic"
+          transition={{ duration: 0.6, delay: 0.8, ease }}
+          className="text-lg md:text-xl text-[#8A8F98] leading-relaxed max-w-2xl mx-auto mb-10 mt-8 italic"
         >
           First workflow automated free — no strings attached.
         </motion.p>
@@ -230,7 +288,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4, ease }}
+          transition={{ duration: 0.6, delay: 1.0, ease }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <ShineButton href="#book" size="lg">
@@ -241,16 +299,6 @@ export default function Hero() {
             See what we build
           </ShineButton>
         </motion.div>
-
-        {/* Tagline */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-16 text-sm text-[#55585E] tracking-widest uppercase font-medium"
-        >
-          AI is all we do
-        </motion.p>
       </div>
 
       {/* Bottom gradient fade */}
