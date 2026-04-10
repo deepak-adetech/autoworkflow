@@ -6,60 +6,77 @@ import ShineButton from "./ShineButton";
 import BlurText from "./reactbits/BlurText";
 import ShinyText from "./reactbits/ShinyText";
 
-/* ─── Gradient Orb — the visual focal point ─── */
-function GradientOrb() {
+/* ─── Animated Gradient Mesh ─── */
+function AnimatedMesh() {
   return (
     <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-      {/* Primary orb — large blue-cyan glow at top-center */}
-      <div
-        className="absolute -top-[25%] left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full opacity-[0.14]"
-        style={{
-          background:
-            "radial-gradient(ellipse, #3B82F6 0%, #06B6D4 35%, transparent 70%)",
-        }}
-      />
-      {/* Animated secondary glow */}
-      <div className="hero-glow absolute w-[600px] h-[400px] rounded-full top-[10%] left-[35%] opacity-[0.08]" />
-      {/* Soft warm accent on the right */}
-      <div
-        className="absolute top-[20%] right-[5%] w-[350px] h-[350px] rounded-full opacity-[0.04]"
-        style={{
-          background: "radial-gradient(circle, #06B6D4, transparent 70%)",
-        }}
-      />
+      {/* Primary orb — drifts slowly */}
+      <div className="hero-orb-1 absolute -top-[20%] left-[20%] w-[700px] h-[500px] rounded-full opacity-[0.12]" />
+      {/* Secondary orb — counter-drift */}
+      <div className="hero-orb-2 absolute top-[5%] right-[10%] w-[500px] h-[400px] rounded-full opacity-[0.08]" />
+      {/* Tertiary orb — slow pulse */}
+      <div className="hero-orb-3 absolute bottom-[10%] left-[40%] w-[600px] h-[350px] rounded-full opacity-[0.06]" />
     </div>
   );
 }
 
-/* ─── Grid background with fade ─── */
+/* ─── Grid with perspective fade ─── */
 function HeroGrid() {
   return (
     <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-      {/* Grid lines */}
-      <div className="hero-grid absolute inset-0 opacity-100" />
-      {/* Radial fade — grid dissolves at edges */}
+      <div className="hero-grid absolute inset-0" />
+      {/* Radial mask — grid dissolves at edges */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 70% 60% at 50% 40%, transparent 30%, #0A0A0F 80%)",
+            "radial-gradient(ellipse 65% 55% at 50% 40%, transparent 25%, #0A0A0F 75%)",
         }}
       />
     </div>
   );
 }
 
-/* ─── Horizontal beam ─── */
-function LightBeam() {
+/* ─── Pulsing concentric rings ─── */
+function PulseRings() {
   return (
-    <div
-      className="absolute top-[42%] left-0 right-0 h-px opacity-[0.08]"
-      aria-hidden="true"
-      style={{
-        background:
-          "linear-gradient(90deg, transparent 10%, #3B82F6 30%, #06B6D4 50%, #3B82F6 70%, transparent 90%)",
-      }}
-    />
+    <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none" aria-hidden="true">
+      {[0, 1, 2].map((i) => (
+        <div
+          key={i}
+          className="absolute rounded-full border border-[rgba(59,130,246,0.06)]"
+          style={{
+            width: 300 + i * 200,
+            height: 300 + i * 200,
+            animation: `pulse-ring 6s ease-in-out ${i * 2}s infinite`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+/* ─── Horizontal light beams ─── */
+function LightBeams() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      {/* Main beam */}
+      <div
+        className="absolute top-[40%] left-0 right-0 h-px opacity-[0.1]"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent 5%, #3B82F6 25%, #06B6D4 50%, #3B82F6 75%, transparent 95%)",
+        }}
+      />
+      {/* Subtle secondary beam */}
+      <div
+        className="hero-beam absolute top-[41%] left-0 right-0 h-[2px] opacity-[0.04]"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent 10%, #06B6D4 40%, #3B82F6 60%, transparent 90%)",
+        }}
+      />
+    </div>
   );
 }
 
@@ -71,8 +88,9 @@ export default function Hero() {
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0A0A0F]">
       {/* Background layers */}
       <HeroGrid />
-      <GradientOrb />
-      <LightBeam />
+      <AnimatedMesh />
+      <PulseRings />
+      <LightBeams />
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-5xl px-5 sm:px-8 pt-24 pb-16 text-center">
@@ -93,7 +111,7 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* Headline — BlurText animated reveal */}
+        {/* Headline */}
         <div className="mb-2">
           <BlurText
             text="We automate the work"

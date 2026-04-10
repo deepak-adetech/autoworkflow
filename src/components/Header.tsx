@@ -19,7 +19,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -31,25 +31,26 @@ export default function Header() {
 
   return (
     <>
+      {/* Apple-style translucent nav — always frosted */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-[rgba(9,9,11,0.75)] backdrop-blur-xl border-b border-[rgba(255,255,255,0.06)]"
-            : "bg-transparent"
+            ? "apple-nav-scrolled"
+            : "apple-nav"
         }`}
       >
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="flex items-center justify-between h-16 md:h-[72px]">
+          <div className="flex items-center justify-between h-11 md:h-12">
             {/* Logo */}
             <Logo size="sm" />
 
             {/* Desktop nav */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-7">
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-[#9CA3AF] hover:text-[#EEEEF0] transition-colors duration-200"
+                  className="text-[13px] text-[rgba(255,255,255,0.8)] hover:text-white transition-colors duration-200"
                 >
                   {link.label}
                 </a>
@@ -58,18 +59,18 @@ export default function Header() {
 
             {/* Desktop CTA */}
             <div className="hidden md:block">
-              <ShineButton href="#book" size="md">
+              <ShineButton href="#book" size="md" className="!py-2 !px-5 !text-[13px]">
                 Book a Call
               </ShineButton>
             </div>
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden p-2 text-[#9CA3AF] hover:text-white transition-colors"
+              className="md:hidden p-2 text-[rgba(255,255,255,0.8)] hover:text-white transition-colors"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
-              <Menu size={24} />
+              <Menu size={22} />
             </button>
           </div>
         </div>
@@ -85,7 +86,6 @@ export default function Header() {
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-[60] bg-[#0A0A0F]/95 backdrop-blur-2xl flex flex-col"
           >
-            {/* Close button */}
             <div className="flex justify-end px-5 pt-4">
               <button
                 onClick={() => setMobileOpen(false)}
@@ -96,7 +96,6 @@ export default function Header() {
               </button>
             </div>
 
-            {/* Menu links */}
             <nav className="flex-1 flex flex-col items-center justify-center gap-8">
               {NAV_LINKS.map((link, i) => (
                 <motion.a
