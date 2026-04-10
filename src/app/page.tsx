@@ -6,6 +6,7 @@ const WhyWeExist = dynamic(() => import("@/components/WhyWeExist"));
 const Services = dynamic(() => import("@/components/Services"));
 const ToolsIntegrations = dynamic(() => import("@/components/ToolsIntegrations"));
 const HowItWorks = dynamic(() => import("@/components/HowItWorks"));
+const CaseStudies = dynamic(() => import("@/components/CaseStudies"));
 const Results = dynamic(() => import("@/components/Results"));
 const Founders = dynamic(() => import("@/components/Founders"));
 const Pricing = dynamic(() => import("@/components/Pricing"));
@@ -21,6 +22,7 @@ export default function Home() {
       <Services />
       <ToolsIntegrations />
       <HowItWorks />
+      <CaseStudies />
       <Results />
       <Founders />
       <Pricing />

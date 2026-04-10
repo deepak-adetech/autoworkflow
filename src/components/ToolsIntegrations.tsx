@@ -247,13 +247,13 @@ export default function ToolsIntegrations() {
           className="text-center"
         >
           <p className="text-xs font-medium text-[#3B82F6] tracking-widest uppercase mb-3">
-            Integrations
+            Tool Agnostic
           </p>
           <h2 className="text-2xl md:text-3xl font-bold tracking-[-0.02em] mb-3">
-            We connect your <span className="text-gradient">entire stack</span>
+            We don&apos;t sell tools. <span className="text-gradient">We solve problems.</span>
           </h2>
           <p className="text-[#9CA3AF] text-base leading-relaxed max-w-xl mx-auto">
-            AI models, automation platforms, databases, CRMs, and 70+ more — wired into one workflow.
+            No vendor lock-in. We evaluate your needs and pick the best combination from 50+ platforms, AI models, and infrastructure providers.
           </p>
         </motion.div>
       </div>
