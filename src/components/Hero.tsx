@@ -1,218 +1,49 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import ShineButton from "./ShineButton";
 import BlurText from "./reactbits/BlurText";
 import ShinyText from "./reactbits/ShinyText";
 
-/* ─── Canvas Waves ─── */
-function WaveCanvas() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let animId: number;
-    let frame = 0;
-
-    const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio, 2);
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = `${window.innerWidth}px`;
-      canvas.style.height = `${window.innerHeight}px`;
-      ctx.scale(dpr, dpr);
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    const w = () => window.innerWidth;
-    const h = () => window.innerHeight;
-
-    const waves = [
-      { freq: 0.003, amp: 35, speed: 0.015, phase: 0, opacity: 0.04 },
-      { freq: 0.005, amp: 25, speed: 0.012, phase: 2, opacity: 0.03 },
-      { freq: 0.007, amp: 18, speed: 0.018, phase: 4, opacity: 0.025 },
-      { freq: 0.004, amp: 30, speed: 0.01, phase: 1, opacity: 0.02 },
-    ];
-
-    const draw = () => {
-      ctx.clearRect(0, 0, w(), h());
-
-      for (const wave of waves) {
-        ctx.beginPath();
-        const baseline = h() * 0.72;
-
-        for (let x = 0; x <= w(); x += 2) {
-          const y =
-            baseline +
-            Math.sin(x * wave.freq + frame * wave.speed + wave.phase) *
-              wave.amp +
-            Math.sin(x * wave.freq * 1.8 + frame * wave.speed * 0.7) *
-              wave.amp *
-              0.5;
-
-          if (x === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
-        }
-
-        ctx.lineTo(w(), h());
-        ctx.lineTo(0, h());
-        ctx.closePath();
-
-        const grad = ctx.createLinearGradient(0, h() * 0.6, 0, h());
-        grad.addColorStop(0, `rgba(94, 106, 210, ${wave.opacity})`);
-        grad.addColorStop(
-          0.5,
-          `rgba(124, 92, 252, ${wave.opacity * 0.6})`
-        );
-        grad.addColorStop(1, "rgba(94, 106, 210, 0)");
-        ctx.fillStyle = grad;
-        ctx.fill();
-      }
-
-      frame++;
-      animId = requestAnimationFrame(draw);
-    };
-
-    animId = requestAnimationFrame(draw);
-
-    return () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
-
+/* ─── CSS Gradient Mesh Background ─── */
+function GradientMesh() {
   return (
-    <canvas
-      ref={canvasRef}
-      className="absolute inset-0 pointer-events-none hidden md:block"
-      aria-hidden="true"
-    />
-  );
-}
-
-/* ─── Ambient Blobs ─── */
-function AmbientBlobs() {
-  return (
-    <div
-      className="absolute inset-0 overflow-hidden pointer-events-none"
-      aria-hidden="true"
-    >
+    <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+      {/* Static multi-layer gradient mesh */}
       <div
-        className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full opacity-[0.07]"
+        className="absolute inset-0"
         style={{
-          background: "radial-gradient(ellipse, #5E6AD2 0%, transparent 70%)",
+          background: `
+            radial-gradient(ellipse 80% 50% at 25% 20%, rgba(94,106,210,0.12) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 60% at 78% 25%, rgba(124,92,252,0.09) 0%, transparent 55%),
+            radial-gradient(ellipse 70% 50% at 50% 90%, rgba(167,139,250,0.06) 0%, transparent 60%)
+          `,
         }}
       />
+
+      {/* Animated soft glow — single element, CSS-only */}
+      <div className="hero-glow absolute w-[700px] h-[500px] rounded-full top-[15%] left-[30%] opacity-[0.07]" />
+
+      {/* Subtle grid lines */}
       <div
-        className="absolute top-[10%] left-[15%] w-[500px] h-[500px] rounded-full opacity-[0.04] blur-[100px]"
+        className="absolute inset-0 opacity-[0.025]"
         style={{
-          background: "radial-gradient(circle, #5E6AD2, transparent 70%)",
-          animation: "blob-drift-1 20s ease-in-out infinite",
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
         }}
       />
+
+      {/* Top-down vignette */}
       <div
-        className="absolute top-[30%] right-[10%] w-[400px] h-[400px] rounded-full opacity-[0.05] blur-[80px]"
+        className="absolute inset-0"
         style={{
-          background: "radial-gradient(circle, #7C5CFC, transparent 70%)",
-          animation: "blob-drift-2 25s ease-in-out infinite",
+          background: "radial-gradient(ellipse 70% 50% at 50% 50%, transparent 40%, #09090B 100%)",
         }}
       />
-      <div
-        className="absolute bottom-[15%] left-[35%] w-[600px] h-[400px] rounded-full opacity-[0.03] blur-[120px]"
-        style={{
-          background: "radial-gradient(circle, #A78BFA, transparent 70%)",
-          animation: "blob-drift-3 22s ease-in-out infinite",
-        }}
-      />
-    </div>
-  );
-}
-
-/* ─── Dot Grid ─── */
-function DotGrid() {
-  return (
-    <div
-      className="absolute inset-0 pointer-events-none opacity-[0.03]"
-      aria-hidden="true"
-      style={{
-        backgroundImage:
-          "radial-gradient(circle, #8A8F98 1px, transparent 1px)",
-        backgroundSize: "40px 40px",
-      }}
-    />
-  );
-}
-
-/* ─── Floating Particles ─── */
-function FloatingParticles() {
-  const [particles] = useState(() =>
-    Array.from({ length: 30 }, (_, i) => ({
-      id: i,
-      left: Math.random() * 100,
-      top: Math.random() * 100,
-      size: Math.random() * 2 + 1,
-      duration: Math.random() * 15 + 20,
-      delay: Math.random() * 10,
-      opacity: Math.random() * 0.3 + 0.1,
-    }))
-  );
-
-  return (
-    <div
-      className="absolute inset-0 pointer-events-none overflow-hidden"
-      aria-hidden="true"
-    >
-      {particles.map((p) => (
-        <div
-          key={p.id}
-          className="absolute rounded-full bg-[#5E6AD2]"
-          style={{
-            left: `${p.left}%`,
-            top: `${p.top}%`,
-            width: p.size,
-            height: p.size,
-            opacity: p.opacity,
-            animation: `blob-drift-${(p.id % 3) + 1} ${p.duration}s ease-in-out ${p.delay}s infinite`,
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-
-/* ─── Orbiting Rings ─── */
-function OrbitingRings() {
-  return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center" aria-hidden="true">
-      {[380, 520, 680].map((size, i) => (
-        <div
-          key={size}
-          className="absolute rounded-full border border-[rgba(94,106,210,0.06)]"
-          style={{
-            width: size,
-            height: size,
-            animation: `spin ${40 + i * 15}s linear infinite ${i % 2 === 0 ? "" : "reverse"}`,
-          }}
-        >
-          <div
-            className="absolute w-2 h-2 rounded-full bg-[#5E6AD2]"
-            style={{
-              top: 0,
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              opacity: 0.4 + i * 0.15,
-              boxShadow: "0 0 8px rgba(94,106,210,0.5)",
-            }}
-          />
-        </div>
-      ))}
     </div>
   );
 }
@@ -223,12 +54,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
-      {/* Backgrounds */}
-      <AmbientBlobs />
-      <DotGrid />
-      <FloatingParticles />
-      <OrbitingRings />
-      <WaveCanvas />
+      <GradientMesh />
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-5xl px-5 sm:px-8 pt-24 pb-16 text-center">

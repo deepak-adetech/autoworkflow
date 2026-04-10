@@ -58,14 +58,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-gradient-animated {
   background: linear-gradient(
-    90deg,
-    #5E6AD2 0%,
-    #7C5CFC 16%,
-    #A78BFA 33%,
-    #818CF8 50%,
-    #5E6AD2 66%,
-    #7C5CFC 83%,
-    #A78BFA 100%
+    90deg, #5E6AD2 0%, #7C5CFC 16%, #A78BFA 33%,
+    #818CF8 50%, #5E6AD2 66%, #7C5CFC 83%, #A78BFA 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -78,28 +72,17 @@ h1, h2, h3, h4, h5, h6 {
   to { background-position: 200% center; }
 }
 
-/* Gradient text for BlurText inline spans */
+/* BlurText gradient spans */
 .text-gradient-animated-inline span {
   background: linear-gradient(
-    90deg,
-    #5E6AD2 0%,
-    #7C5CFC 16%,
-    #A78BFA 33%,
-    #818CF8 50%,
-    #5E6AD2 66%,
-    #7C5CFC 83%,
-    #A78BFA 100%
+    90deg, #5E6AD2 0%, #7C5CFC 16%, #A78BFA 33%,
+    #818CF8 50%, #5E6AD2 66%, #7C5CFC 83%, #A78BFA 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradient-flow 4s linear infinite;
-}
-
-/* ─── Spin for orbiting rings ─── */
-@keyframes spin {
-  to { transform: rotate(360deg); }
 }
 
 /* ─── AI Breathing ─── */
@@ -144,8 +127,8 @@ h1, h2, h3, h4, h5, h6 {
 /* ─── Glassmorphism ─── */
 .glass-card {
   background: var(--color-glass-bg);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--color-glass-border);
   border-radius: 16px;
   transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
@@ -157,36 +140,16 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 40px -12px rgba(94, 106, 210, 0.15);
 }
 
-/* ─── Noise Grain Overlay ─── */
-.noise-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.018;
-  mix-blend-mode: overlay;
+/* ─── Hero Glow ─── */
+.hero-glow {
+  background: radial-gradient(circle, rgba(94,106,210,0.5), rgba(124,92,252,0.3) 40%, transparent 70%);
+  filter: blur(80px);
+  animation: hero-drift 18s ease-in-out infinite alternate;
 }
 
-/* ─── Blob Animations ─── */
-@keyframes blob-drift-1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(40px, -60px) scale(1.08); }
-  50% { transform: translate(-20px, 40px) scale(0.95); }
-  75% { transform: translate(30px, 20px) scale(1.03); }
-}
-
-@keyframes blob-drift-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(-50px, 30px) scale(0.92); }
-  50% { transform: translate(30px, -40px) scale(1.1); }
-  75% { transform: translate(-20px, -20px) scale(0.97); }
-}
-
-@keyframes blob-drift-3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(20px, 50px) scale(1.05); }
-  50% { transform: translate(-40px, -30px) scale(0.93); }
-  75% { transform: translate(10px, -40px) scale(1.02); }
+@keyframes hero-drift {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(60px, -40px); }
 }
 
 /* ─── Section spacing ─── */
@@ -204,14 +167,27 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ─── Marquee ─── */
 @keyframes marquee {
-  0% { transform: translateX(0); }
+  0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
+@keyframes marquee-reverse {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
 .marquee-track {
-  animation: marquee 30s linear infinite;
+  animation: marquee 35s linear infinite;
 }
 
 .marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-track-reverse {
+  animation: marquee-reverse 40s linear infinite;
+}
+
+.marquee-track-reverse:hover {
   animation-play-state: paused;
 }
