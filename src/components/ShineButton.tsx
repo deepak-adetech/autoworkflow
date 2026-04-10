@@ -1,0 +1,52 @@
+"use client";
+
+import { type ReactNode } from "react";
+
+interface ShineButtonProps {
+  children: ReactNode;
+  href?: string;
+  className?: string;
+  variant?: "primary" | "secondary";
+  size?: "md" | "lg";
+  onClick?: () => void;
+}
+
+export default function ShineButton({
+  children,
+  href,
+  className = "",
+  variant = "primary",
+  size = "md",
+  onClick,
+}: ShineButtonProps) {
+  const base =
+    "shine-button inline-flex items-center justify-center font-medium rounded-full transition-all duration-250 ease-out cursor-pointer";
+
+  const variants = {
+    primary:
+      "bg-[#5E6AD2] text-white hover:bg-[#6E7AE2] shadow-[0_0_24px_-6px_rgba(94,106,210,0.4)] hover:shadow-[0_0_32px_-4px_rgba(94,106,210,0.5)]",
+    secondary:
+      "bg-transparent text-[#EDEDEF] border border-[rgba(255,255,255,0.12)] hover:border-[rgba(255,255,255,0.24)] hover:bg-[rgba(255,255,255,0.04)]",
+  };
+
+  const sizeStyles = {
+    md: "px-6 py-3 text-sm gap-2",
+    lg: "px-8 py-4 text-base gap-2.5",
+  };
+
+  const cls = `${base} ${variants[variant]} ${sizeStyles[size]} ${className}`;
+
+  if (href) {
+    return (
+      <a href={href} className={cls}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <button onClick={onClick} className={cls}>
+      {children}
+    </button>
+  );
+}

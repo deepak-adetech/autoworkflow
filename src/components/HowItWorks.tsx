@@ -1,0 +1,114 @@
+"use client";
+
+import { motion } from "motion/react";
+import { Phone, Compass, Rocket, TrendingUp } from "lucide-react";
+
+const STEPS = [
+  {
+    icon: Phone,
+    number: "01",
+    title: "Discovery",
+    description:
+      "Book a free call. We audit your workflows, identify bottlenecks, and pinpoint the highest-ROI automation opportunities.",
+  },
+  {
+    icon: Compass,
+    number: "02",
+    title: "Design",
+    description:
+      "We architect your solution with a clear scope, timeline, and expected impact. You approve before we write a single line of code.",
+  },
+  {
+    icon: Rocket,
+    number: "03",
+    title: "Build & Deploy",
+    description:
+      "Our engineers build, test, and deploy your automation. First workflow is on us — see the results before you invest a dollar.",
+  },
+  {
+    icon: TrendingUp,
+    number: "04",
+    title: "Optimize & Scale",
+    description:
+      "We monitor performance, fine-tune accuracy, and scale your automations as your business grows. Continuous improvement, built in.",
+  },
+];
+
+const ease = [0.16, 1, 0.3, 1] as const;
+
+export default function HowItWorks() {
+  return (
+    <section id="how-it-works" className="section-padding relative">
+      {/* Subtle background gradient */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-40"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 50% at 50% 50%, rgba(94,106,210,0.04), transparent)",
+        }}
+      />
+
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease }}
+          className="text-center mb-16 md:mb-20"
+        >
+          <p className="text-xs font-medium text-[#5E6AD2] tracking-widest uppercase mb-4">
+            How It Works
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.025em] mb-5">
+            From chaos to{" "}
+            <span className="text-gradient">autopilot</span>
+          </h2>
+          <p className="text-[#8A8F98] text-lg leading-relaxed max-w-2xl mx-auto">
+            Four steps. Two weeks. One less headache on your plate forever.
+          </p>
+        </motion.div>
+
+        {/* Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          {/* Connecting line (desktop) */}
+          <div className="hidden lg:block absolute top-[72px] left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[rgba(94,106,210,0.2)] to-transparent" />
+
+          {STEPS.map((step, i) => (
+            <motion.div
+              key={step.number}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease }}
+              className="relative text-center lg:text-center"
+            >
+              {/* Step icon circle */}
+              <div className="relative mx-auto w-[88px] h-[88px] mb-6">
+                {/* Glow ring */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#5E6AD2] to-[#7C5CFC] opacity-10 blur-md" />
+                {/* Circle */}
+                <div className="relative w-full h-full rounded-full border border-[rgba(94,106,210,0.25)] bg-[rgba(94,106,210,0.06)] flex items-center justify-center">
+                  <step.icon size={28} className="text-[#5E6AD2]" />
+                </div>
+                {/* Number badge */}
+                <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-[#5E6AD2] flex items-center justify-center">
+                  <span className="text-xs font-bold text-white">
+                    {step.number}
+                  </span>
+                </div>
+              </div>
+
+              <h3 className="text-lg font-semibold text-[#EDEDEF] mb-2 tracking-tight">
+                {step.title}
+              </h3>
+              <p className="text-sm text-[#8A8F98] leading-[1.7] max-w-[280px] mx-auto">
+                {step.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
