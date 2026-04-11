@@ -60,7 +60,8 @@ export default function WhyWeExist() {
             Closing the gap between{" "}
             <span className="text-gradient">&ldquo;AI can do this&rdquo;</span>{" "}
             and{" "}
-            <span className="text-gradient">&ldquo;AI actually does this here&rdquo;</span>
+            <span className="text-gradient">&ldquo;AI actually does this&rdquo;</span>{" "}
+            is here.
           </h2>
           <p className="text-[#9CA3AF] text-lg leading-relaxed max-w-2xl mx-auto">
             We help businesses harness the power of AI capabilities — not with
