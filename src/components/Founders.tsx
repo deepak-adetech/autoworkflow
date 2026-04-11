@@ -13,20 +13,20 @@ function LinkedinIcon({ size = 15 }: { size?: number }) {
 
 const FOUNDERS = [
   {
-    name: "Deepak Sharma",
-    role: "Co-Founder",
-    bio: "Saw too many smart teams stuck doing dumb work — copying data, chasing approvals, assembling reports. Built AutoWorkflow.AI to close the gap between what AI can do and what it actually does inside a business.",
-    initials: "DS",
-    gradient: "from-[#3B82F6] to-[#06B6D4]",
-    linkedin: "https://www.linkedin.com/in/deepak-sharma",
-  },
-  {
     name: "Pranav Parekh",
     role: "Co-Founder",
     bio: "Spent years watching consultancies deliver decks and disappear. Co-founded AutoWorkflow.AI to be the builders who stay — loyal to the problem, not to any vendor or technology.",
     initials: "PP",
     gradient: "from-[#06B6D4] to-[#22D3EE]",
     linkedin: "https://www.linkedin.com/in/pranav-parekh",
+  },
+  {
+    name: "Deepak Sharma",
+    role: "Co-Founder",
+    bio: "Saw too many smart teams stuck doing dumb work — copying data, chasing approvals, assembling reports. Built AutoWorkflow.AI to close the gap between what AI can do and what it actually does inside a business.",
+    initials: "DS",
+    gradient: "from-[#3B82F6] to-[#06B6D4]",
+    linkedin: "https://www.linkedin.com/in/deepak-sharma",
   },
 ];
 

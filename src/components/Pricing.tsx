@@ -140,14 +140,18 @@ export default function Pricing() {
                 {/* Badge */}
                 {tier.badge && (
                   <div
-                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium mb-5 w-fit ${
+                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-5 w-fit ${
                       tier.highlight
                         ? "bg-[rgba(59,130,246,0.15)] text-[#06B6D4]"
-                        : "bg-[rgba(255,255,255,0.05)] text-[#9CA3AF]"
+                        : tier.badge === "No risk"
+                          ? "bg-[rgba(34,197,94,0.12)] text-[#22C55E] border border-[rgba(34,197,94,0.25)] shadow-[0_0_12px_-4px_rgba(34,197,94,0.3)]"
+                          : "bg-[rgba(255,255,255,0.05)] text-[#9CA3AF]"
                     }`}
                   >
                     {tier.highlight ? (
                       <Sparkles size={11} />
+                    ) : tier.badge === "No risk" ? (
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
                     ) : null}
                     {tier.badge}
                   </div>

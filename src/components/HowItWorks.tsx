@@ -28,7 +28,7 @@ const STEPS = [
   {
     icon: TrendingUp,
     number: "04",
-    title: "Stay & Improve",
+    title: "Deploy & Improve",
     description:
       "We don't deliver and disappear. We monitor, optimize, and expand your automations as your business evolves. Builders who stay.",
   },
