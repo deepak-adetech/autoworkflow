@@ -237,7 +237,7 @@ export default function ToolsIntegrations() {
   const row2Doubled = [...TOOLS_ROW_2, ...TOOLS_ROW_2];
 
   return (
-    <section id="tools" className="py-16 md:py-20 relative overflow-hidden">
+    <section id="tools" className="py-16 md:py-24 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 mb-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

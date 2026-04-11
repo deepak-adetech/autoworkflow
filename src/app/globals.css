@@ -219,10 +219,11 @@ h1, h2, h3, h4, h5, h6 {
   50% { opacity: 0.08; transform: scaleX(1.05); }
 }
 
-/* ─── Section spacing ─── */
+/* ─── Section spacing (4px base unit system) ─── */
+/* Mobile: 64px (space-16), Desktop: 96px (space-24) */
 .section-padding {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 @media (min-width: 768px) {
