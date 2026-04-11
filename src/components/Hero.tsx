@@ -212,13 +212,9 @@ export default function Hero() {
             First workflow free
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
           </a>
-          <div className="flex items-center gap-6 text-sm text-[#6B7280]">
-            <span>No contracts</span>
-            <span className="w-1 h-1 rounded-full bg-[#6B7280] opacity-50" />
-            <span>No obligations</span>
-            <span className="w-1 h-1 rounded-full bg-[#6B7280] opacity-50" />
-            <span>We bet on our work</span>
-          </div>
+          <p className="text-sm text-[#6B7280]">
+            First Automation Workflow FREE — no strings attached.
+          </p>
         </motion.div>
       </div>
 
