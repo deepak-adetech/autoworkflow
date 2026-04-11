@@ -162,7 +162,7 @@ export default function Hero() {
         <div className="mb-2">
           <BlurText
             text="We automate the processes"
-            className="text-[clamp(2.25rem,5.5vw,4.5rem)] font-bold leading-[1.08] tracking-[-0.03em] text-[#EEEEF0] justify-center"
+            className="text-[clamp(2.5rem,5.5vw,4.5rem)] font-bold leading-[1.08] tracking-[-0.03em] text-[#EEEEF0] justify-center"
             delay={80}
             animateBy="words"
             direction="bottom"
@@ -171,7 +171,7 @@ export default function Hero() {
         </div>
         <BlurText
           text="no software was built for."
-          className="text-[clamp(2.25rem,5.5vw,4.5rem)] font-bold leading-[1.08] tracking-[-0.03em] justify-center text-gradient-animated-inline"
+          className="text-[clamp(2.5rem,5.5vw,4.5rem)] font-bold leading-[1.08] tracking-[-0.03em] justify-center text-gradient-animated-inline"
           delay={100}
           animateBy="words"
           direction="bottom"
@@ -209,7 +209,7 @@ export default function Hero() {
             href="#book"
             className="group relative inline-flex items-center gap-3 px-10 py-4 rounded-full bg-[#3B82F6] text-white text-lg font-semibold shadow-[0_0_40px_-8px_rgba(59,130,246,0.5)] hover:shadow-[0_0_60px_-4px_rgba(59,130,246,0.6)] hover:bg-[#60A5FA] transition-all duration-300 shine-button"
           >
-            First workflow free
+            Start Your Workflow Now
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
           </a>
           <p className="text-sm text-[#6B7280]">

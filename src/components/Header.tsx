@@ -40,7 +40,7 @@ export default function Header() {
         }`}
       >
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="flex items-center justify-between h-11 md:h-12">
+          <div className="flex items-center justify-between h-11 md:h-12 mt-5 md:mt-[30px]">
             {/* Logo */}
             <Logo size="sm" />
 

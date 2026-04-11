@@ -272,7 +272,7 @@ export default function Results() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08, ease }}
-              className="glass-card p-6 md:p-8 text-center"
+              className={`glass-card p-6 md:p-8 text-center ${metric.label === "Average Deployment" ? "!bg-gradient-to-br !from-[rgba(59,130,246,0.08)] !to-[rgba(6,182,212,0.04)] !border-[rgba(59,130,246,0.2)]" : ""}`}
             >
               <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-2 tracking-tight">
                 {metric.value === 3.2 ? (

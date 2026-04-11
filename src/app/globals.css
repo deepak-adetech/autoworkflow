@@ -146,8 +146,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 767px) {
   .glass-card {
-    border-color: rgba(255, 255, 255, 0.18);
-    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.06);
+    border-color: rgba(59, 130, 246, 0.25);
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.6), 0 0 20px -8px rgba(59, 130, 246, 0.12);
   }
 }
 
@@ -221,8 +221,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ─── Section spacing ─── */
 .section-padding {
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 @media (min-width: 768px) {
