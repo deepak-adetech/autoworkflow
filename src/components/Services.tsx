@@ -70,14 +70,14 @@ export default function Services() {
           transition={{ duration: 0.7, ease }}
           className="text-center mb-16 md:mb-20"
         >
-          <p className="text-xs font-medium text-[#3B82F6] tracking-widest uppercase mb-4">
+          <p className="text-xs font-medium text-[#0D6B4E] tracking-widest uppercase mb-4">
             What We Actually Build
           </p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.025em] mb-5">
             Not decks. Not demos.{" "}
             <span className="text-gradient">Working automations.</span>
           </h2>
-          <p className="text-[#9CA3AF] text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#4B5563] text-lg leading-relaxed max-w-2xl mx-auto">
             We build the specific automation your business needs — deployed in your
             stack, solving your workflow, saving your team real hours every week.
           </p>
@@ -99,17 +99,17 @@ export default function Services() {
               className="glass-card p-7 md:p-8 group cursor-default"
             >
               {/* Icon */}
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[rgba(59,130,246,0.15)] to-[rgba(6,182,212,0.08)] flex items-center justify-center mb-5 group-hover:from-[rgba(59,130,246,0.25)] group-hover:to-[rgba(6,182,212,0.15)] transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[rgba(13,107,78,0.15)] to-[rgba(16,185,129,0.08)] flex items-center justify-center mb-5 group-hover:from-[rgba(13,107,78,0.25)] group-hover:to-[rgba(16,185,129,0.15)] transition-all duration-300">
                 <service.icon
                   size={22}
-                  className="text-[#3B82F6] group-hover:text-[#06B6D4] transition-colors duration-300"
+                  className="text-[#0D6B4E] group-hover:text-[#10B981] transition-colors duration-300"
                 />
               </div>
 
-              <h3 className="text-lg font-semibold text-[#EEEEF0] mb-3 tracking-tight">
+              <h3 className="text-lg font-semibold text-[#111827] mb-3 tracking-tight">
                 {service.title}
               </h3>
-              <p className="text-sm text-[#9CA3AF] leading-[1.7]">
+              <p className="text-sm text-[#4B5563] leading-[1.7]">
                 {service.description}
               </p>
             </motion.div>

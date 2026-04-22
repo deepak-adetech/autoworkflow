@@ -40,7 +40,7 @@ export default function WhyWeExist() {
         className="absolute inset-0 pointer-events-none opacity-30"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 30%, rgba(59,130,246,0.05), transparent)",
+            "radial-gradient(ellipse 70% 50% at 50% 30%, rgba(13,107,78,0.05), transparent)",
         }}
       />
 
@@ -53,7 +53,7 @@ export default function WhyWeExist() {
           transition={{ duration: 0.7, ease }}
           className="text-center mb-16 md:mb-20"
         >
-          <p className="text-xs font-medium text-[#3B82F6] tracking-widest uppercase mb-4">
+          <p className="text-xs font-medium text-[#0D6B4E] tracking-widest uppercase mb-4">
             Why We Exist
           </p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.025em] mb-6 max-w-3xl mx-auto leading-[1.15]">
@@ -63,7 +63,7 @@ export default function WhyWeExist() {
             <span className="text-gradient">&ldquo;AI actually does this&rdquo;</span>{" "}
             is here.
           </h2>
-          <p className="text-[#9CA3AF] text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#4B5563] text-lg leading-relaxed max-w-2xl mx-auto">
             We help businesses harness the power of AI capabilities — not with
             pitch decks or proof-of-concepts, but with working automations
             deployed in your stack.
@@ -82,17 +82,17 @@ export default function WhyWeExist() {
               className="glass-card p-7 md:p-8"
             >
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[rgba(59,130,246,0.15)] to-[rgba(6,182,212,0.08)] flex items-center justify-center">
-                  <pillar.icon size={18} className="text-[#3B82F6]" />
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[rgba(13,107,78,0.15)] to-[rgba(16,185,129,0.08)] flex items-center justify-center">
+                  <pillar.icon size={18} className="text-[#0D6B4E]" />
                 </div>
-                <span className="text-xs font-semibold text-[#3B82F6] uppercase tracking-wider">
+                <span className="text-xs font-semibold text-[#0D6B4E] uppercase tracking-wider">
                   {pillar.label}
                 </span>
               </div>
-              <h3 className="text-lg font-semibold text-[#EEEEF0] mb-3 tracking-tight leading-snug">
+              <h3 className="text-lg font-semibold text-[#111827] mb-3 tracking-tight leading-snug">
                 {pillar.title}
               </h3>
-              <p className="text-sm text-[#9CA3AF] leading-[1.7]">
+              <p className="text-sm text-[#4B5563] leading-[1.7]">
                 {pillar.body}
               </p>
             </motion.div>
@@ -110,9 +110,9 @@ export default function WhyWeExist() {
           {NOT_LIST.map((item) => (
             <div
               key={item}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] text-sm text-[#6B7280]"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[rgba(0,0,0,0.06)] bg-[rgba(0,0,0,0.02)] text-sm text-[#9CA3AF]"
             >
-              <X size={13} className="text-[#6B7280] opacity-60" />
+              <X size={13} className="text-[#9CA3AF] opacity-60" />
               {item}
             </div>
           ))}

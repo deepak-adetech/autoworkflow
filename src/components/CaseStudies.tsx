@@ -113,14 +113,14 @@ export default function CaseStudies() {
           transition={{ duration: 0.7, ease }}
           className="text-center mb-12 md:mb-16"
         >
-          <p className="text-xs font-medium text-[#3B82F6] tracking-widest uppercase mb-4">
+          <p className="text-xs font-medium text-[#0D6B4E] tracking-widest uppercase mb-4">
             Case Studies
           </p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.025em] mb-5">
             Real work. Real results.{" "}
             <span className="text-gradient">Real systems.</span>
           </h2>
-          <p className="text-[#9CA3AF] text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#4B5563] text-lg leading-relaxed max-w-2xl mx-auto">
             Not hypotheticals. These are actual processes we automated — and
             the impact they made.
           </p>
@@ -131,14 +131,14 @@ export default function CaseStudies() {
           {/* Nav arrows */}
           <button
             onClick={() => manual(prev)}
-            className="absolute -left-2 md:-left-14 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#6B7280] hover:text-[#EEEEF0] hover:border-[rgba(59,130,246,0.3)] transition-all duration-200 cursor-pointer"
+            className="absolute -left-2 md:-left-14 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.08)] flex items-center justify-center text-[#9CA3AF] hover:text-[#111827] hover:border-[rgba(13,107,78,0.3)] transition-all duration-200 cursor-pointer"
             aria-label="Previous case"
           >
             <ChevronLeft size={18} />
           </button>
           <button
             onClick={() => manual(next)}
-            className="absolute -right-2 md:-right-14 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#6B7280] hover:text-[#EEEEF0] hover:border-[rgba(59,130,246,0.3)] transition-all duration-200 cursor-pointer"
+            className="absolute -right-2 md:-right-14 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.08)] flex items-center justify-center text-[#9CA3AF] hover:text-[#111827] hover:border-[rgba(13,107,78,0.3)] transition-all duration-200 cursor-pointer"
             aria-label="Next case"
           >
             <ChevronRight size={18} />
@@ -158,10 +158,10 @@ export default function CaseStudies() {
               {/* Top row: tag + metric */}
               <div className="flex items-start justify-between mb-6 flex-wrap gap-4">
                 <div>
-                  <span className="inline-block px-3 py-1 rounded-full bg-[rgba(59,130,246,0.1)] text-[#3B82F6] text-xs font-semibold uppercase tracking-wider mb-3">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[rgba(13,107,78,0.1)] text-[#0D6B4E] text-xs font-semibold uppercase tracking-wider mb-3">
                     {c.tag}
                   </span>
-                  <h3 className="text-xl md:text-2xl font-bold text-[#EEEEF0] tracking-tight">
+                  <h3 className="text-xl md:text-2xl font-bold text-[#111827] tracking-tight">
                     {c.title}
                   </h3>
                 </div>
@@ -169,7 +169,7 @@ export default function CaseStudies() {
                   <div className="text-3xl md:text-4xl font-bold text-gradient">
                     {c.metric}
                   </div>
-                  <p className="text-xs text-[#6B7280] font-medium mt-1">
+                  <p className="text-xs text-[#9CA3AF] font-medium mt-1">
                     {c.metricLabel}
                   </p>
                 </div>
@@ -177,26 +177,26 @@ export default function CaseStudies() {
 
               {/* Before / After / Result */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div className="p-4 rounded-xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.04)]">
+                <div className="p-4 rounded-xl bg-[rgba(0,0,0,0.02)] border border-[rgba(0,0,0,0.04)]">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-2 h-2 rounded-full bg-[#EF4444] opacity-60" />
                     <span className="text-xs font-semibold text-[#EF4444] uppercase tracking-wider opacity-80">Before</span>
                   </div>
-                  <p className="text-sm text-[#9CA3AF] leading-[1.7]">{c.before}</p>
+                  <p className="text-sm text-[#4B5563] leading-[1.7]">{c.before}</p>
                 </div>
-                <div className="p-4 rounded-xl bg-[rgba(59,130,246,0.03)] border border-[rgba(59,130,246,0.1)]">
+                <div className="p-4 rounded-xl bg-[rgba(13,107,78,0.03)] border border-[rgba(13,107,78,0.1)]">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="w-2 h-2 rounded-full bg-[#3B82F6]" />
-                    <span className="text-xs font-semibold text-[#3B82F6] uppercase tracking-wider">What we built</span>
+                    <span className="w-2 h-2 rounded-full bg-[#0D6B4E]" />
+                    <span className="text-xs font-semibold text-[#0D6B4E] uppercase tracking-wider">What we built</span>
                   </div>
-                  <p className="text-sm text-[#9CA3AF] leading-[1.7]">{c.automation}</p>
+                  <p className="text-sm text-[#4B5563] leading-[1.7]">{c.automation}</p>
                 </div>
                 <div className="p-4 rounded-xl bg-[rgba(34,197,94,0.03)] border border-[rgba(34,197,94,0.1)]">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-2 h-2 rounded-full bg-[#22C55E] opacity-80" />
                     <span className="text-xs font-semibold text-[#22C55E] uppercase tracking-wider opacity-80">Result</span>
                   </div>
-                  <p className="text-sm text-[#9CA3AF] leading-[1.7]">{c.result}</p>
+                  <p className="text-sm text-[#4B5563] leading-[1.7]">{c.result}</p>
                 </div>
               </div>
             </motion.div>
@@ -210,8 +210,8 @@ export default function CaseStudies() {
                 onClick={() => manual(() => goTo(i))}
                 className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                   i === current
-                    ? "w-6 bg-[#3B82F6]"
-                    : "w-1.5 bg-[rgba(255,255,255,0.15)] hover:bg-[rgba(255,255,255,0.3)]"
+                    ? "w-6 bg-[#0D6B4E]"
+                    : "w-1.5 bg-[rgba(0,0,0,0.15)] hover:bg-[rgba(0,0,0,0.3)]"
                 }`}
                 aria-label={`Case study ${i + 1}`}
               />

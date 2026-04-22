@@ -89,7 +89,7 @@ export default function Pricing() {
         className="absolute inset-0 pointer-events-none opacity-40"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 30%, rgba(59,130,246,0.04), transparent)",
+            "radial-gradient(ellipse 70% 50% at 50% 30%, rgba(13,107,78,0.04), transparent)",
         }}
       />
 
@@ -102,14 +102,14 @@ export default function Pricing() {
           transition={{ duration: 0.7, ease }}
           className="text-center mb-14 md:mb-16"
         >
-          <p className="text-xs font-medium text-[#3B82F6] tracking-widest uppercase mb-4">
+          <p className="text-xs font-medium text-[#0D6B4E] tracking-widest uppercase mb-4">
             Pricing
           </p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.025em] mb-5">
             Simple pricing.{" "}
             <span className="text-gradient">Serious results.</span>
           </h2>
-          <p className="text-[#9CA3AF] text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#4B5563] text-lg leading-relaxed max-w-2xl mx-auto">
             Every engagement starts with a free workflow. We prove the value
             before you invest — because builders should bet on their work.
           </p>
@@ -126,14 +126,14 @@ export default function Pricing() {
               transition={{ duration: 0.5, delay: i * 0.1, ease }}
               className={`relative rounded-2xl p-[1px] ${
                 tier.highlight
-                  ? "bg-gradient-to-b from-[rgba(59,130,246,0.4)] via-[rgba(59,130,246,0.15)] to-[rgba(59,130,246,0.05)]"
+                  ? "bg-gradient-to-b from-[rgba(13,107,78,0.4)] via-[rgba(13,107,78,0.15)] to-[rgba(13,107,78,0.05)]"
                   : ""
               }`}
             >
               <div
                 className={`glass-card rounded-2xl p-7 md:p-8 h-full flex flex-col ${
                   tier.highlight
-                    ? "!bg-[rgba(59,130,246,0.04)] !border-transparent"
+                    ? "!bg-[rgba(13,107,78,0.04)] !border-transparent"
                     : ""
                 }`}
               >
@@ -142,10 +142,10 @@ export default function Pricing() {
                   <div
                     className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-5 w-fit ${
                       tier.highlight
-                        ? "bg-[rgba(59,130,246,0.15)] text-[#06B6D4]"
+                        ? "bg-[rgba(13,107,78,0.15)] text-[#10B981]"
                         : tier.badge === "No risk"
                           ? "bg-[rgba(34,197,94,0.12)] text-[#22C55E] border border-[rgba(34,197,94,0.25)] shadow-[0_0_12px_-4px_rgba(34,197,94,0.3)]"
-                          : "bg-[rgba(255,255,255,0.05)] text-[#9CA3AF]"
+                          : "bg-[rgba(0,0,0,0.05)] text-[#4B5563]"
                     }`}
                   >
                     {tier.highlight ? (
@@ -158,7 +158,7 @@ export default function Pricing() {
                 )}
 
                 {/* Plan name */}
-                <h3 className="text-lg font-semibold text-[#EEEEF0] tracking-tight">
+                <h3 className="text-lg font-semibold text-[#111827] tracking-tight">
                   {tier.name}
                 </h3>
 
@@ -166,16 +166,16 @@ export default function Pricing() {
                 <div className="mt-4 mb-1">
                   <span
                     className={`text-3xl md:text-4xl font-bold tracking-tight ${
-                      tier.highlight ? "text-gradient" : "text-[#EEEEF0]"
+                      tier.highlight ? "text-gradient" : "text-[#111827]"
                     }`}
                   >
                     {tier.price}
                   </span>
                 </div>
-                <p className="text-sm text-[#6B7280] mb-5">{tier.period}</p>
+                <p className="text-sm text-[#9CA3AF] mb-5">{tier.period}</p>
 
                 {/* Description */}
-                <p className="text-sm text-[#9CA3AF] leading-[1.7] mb-7">
+                <p className="text-sm text-[#4B5563] leading-[1.7] mb-7">
                   {tier.description}
                 </p>
 
@@ -184,14 +184,14 @@ export default function Pricing() {
                   {tier.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-3 text-sm text-[#9CA3AF]"
+                      className="flex items-start gap-3 text-sm text-[#4B5563]"
                     >
                       <Check
                         size={15}
                         className={`shrink-0 mt-0.5 ${
                           tier.highlight
-                            ? "text-[#3B82F6]"
-                            : "text-[#6B7280]"
+                            ? "text-[#0D6B4E]"
+                            : "text-[#9CA3AF]"
                         }`}
                       />
                       {feature}

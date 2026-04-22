@@ -16,7 +16,6 @@ export default function Logo({ className = "", size = "md" }: LogoProps) {
 
   return (
     <a href="#" className={`flex items-center gap-2.5 group ${className}`}>
-      {/* Workflow-node icon */}
       <svg
         width={s.icon}
         height={s.icon}
@@ -27,35 +26,21 @@ export default function Logo({ className = "", size = "md" }: LogoProps) {
       >
         <defs>
           <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#3B82F6" />
-            <stop offset="100%" stopColor="#06B6D4" />
+            <stop offset="0%" stopColor="#0D6B4E" />
+            <stop offset="100%" stopColor="#10B981" />
           </linearGradient>
         </defs>
-        {/* Rounded square */}
-        <rect
-          x="1.5"
-          y="1.5"
-          width="29"
-          height="29"
-          rx="8"
-          stroke="url(#logo-grad)"
-          strokeWidth="1.5"
-          fill="rgba(59,130,246,0.08)"
-        />
-        {/* Connection lines */}
+        <rect x="1.5" y="1.5" width="29" height="29" rx="8" stroke="url(#logo-grad)" strokeWidth="1.5" fill="rgba(13,107,78,0.06)" />
         <line x1="10" y1="11" x2="22" y2="11" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" />
         <line x1="10" y1="11" x2="16" y2="22" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" />
         <line x1="22" y1="11" x2="16" y2="22" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" />
-        {/* Nodes */}
         <circle cx="10" cy="11" r="2.8" fill="url(#logo-grad)" />
         <circle cx="22" cy="11" r="2.8" fill="url(#logo-grad)" />
         <circle cx="16" cy="22" r="2.8" fill="url(#logo-grad)" />
       </svg>
-
-      {/* Brand text */}
-      <span className={`${s.text} font-bold tracking-tight`}>
-        <span className="text-[#EEEEF0]">AutoWorkflows</span>
-        <span className="text-[#3B82F6] ai-breathe">.AI</span>
+      <span className={`${s.text} font-semibold tracking-tight`}>
+        <span className="text-[#111827]">AutoWorkflows</span>
+        <span className="text-[#0D6B4E] ai-breathe">.AI</span>
       </span>
     </a>
   );

@@ -144,13 +144,13 @@ export default function TrustedBy() {
   const doubled = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
 
   return (
-    <section className="relative border-y border-[rgba(255,255,255,0.04)] bg-[rgba(255,255,255,0.01)] py-12 overflow-hidden">
+    <section className="relative border-y border-[rgba(0,0,0,0.04)] bg-[rgba(0,0,0,0.01)] py-12 overflow-hidden">
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center text-xs font-medium text-[#6B7280] tracking-widest uppercase mb-8"
+        className="text-center text-xs font-medium text-[#9CA3AF] tracking-widest uppercase mb-8"
       >
         Trusted by industry leaders
       </motion.p>
@@ -158,15 +158,15 @@ export default function TrustedBy() {
       {/* Marquee */}
       <div className="relative">
         {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#0A0A0F] to-transparent" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#0A0A0F] to-transparent" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#FAFAF8] to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#FAFAF8] to-transparent" />
 
         <div className="flex overflow-hidden">
           <div className="marquee-track flex shrink-0 gap-12 md:gap-16 items-center">
             {doubled.map((client, i) => (
               <div
                 key={`${client.name}-${i}`}
-                className="flex items-center shrink-0 text-[#6B7280] hover:text-[#9CA3AF] transition-colors duration-300 opacity-60 hover:opacity-90"
+                className="flex items-center shrink-0 text-[#9CA3AF] hover:text-[#4B5563] transition-colors duration-300 opacity-60 hover:opacity-90"
               >
                 <client.Logo />
               </div>

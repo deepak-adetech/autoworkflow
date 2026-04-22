@@ -35,13 +35,13 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 function FAQItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boolean; onToggle: () => void }) {
   return (
-    <div className="border-b border-[rgba(255,255,255,0.06)] last:border-b-0">
+    <div className="border-b border-[rgba(0,0,0,0.06)] last:border-b-0">
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between py-6 text-left group cursor-pointer"
         aria-expanded={isOpen}
       >
-        <span className="text-base md:text-lg font-medium text-[#EEEEF0] pr-4 group-hover:text-[#3B82F6] transition-colors duration-200">
+        <span className="text-base md:text-lg font-medium text-[#111827] pr-4 group-hover:text-[#0D6B4E] transition-colors duration-200">
           {q}
         </span>
         <motion.span
@@ -49,7 +49,7 @@ function FAQItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boo
           transition={{ duration: 0.25, ease }}
           className="shrink-0"
         >
-          <ChevronDown size={20} className="text-[#6B7280]" />
+          <ChevronDown size={20} className="text-[#9CA3AF]" />
         </motion.span>
       </button>
       <AnimatePresence initial={false}>
@@ -61,7 +61,7 @@ function FAQItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boo
             transition={{ duration: 0.3, ease }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-[#9CA3AF] leading-[1.7] text-sm md:text-base max-w-3xl">
+            <p className="pb-6 text-[#4B5563] leading-[1.7] text-sm md:text-base max-w-3xl">
               {a}
             </p>
           </motion.div>
@@ -85,7 +85,7 @@ export default function FAQ() {
           transition={{ duration: 0.7, ease }}
           className="text-center mb-12 md:mb-16"
         >
-          <p className="text-xs font-medium text-[#3B82F6] tracking-widest uppercase mb-4">
+          <p className="text-xs font-medium text-[#0D6B4E] tracking-widest uppercase mb-4">
             FAQ
           </p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.025em]">

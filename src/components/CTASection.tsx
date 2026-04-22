@@ -14,7 +14,7 @@ export default function CTASection() {
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full opacity-[0.06] blur-[100px]"
           style={{
-            background: "radial-gradient(ellipse, #3B82F6, #06B6D4, transparent 70%)",
+            background: "radial-gradient(ellipse, #0D6B4E, #10B981, transparent 70%)",
           }}
         />
       </div>
@@ -27,9 +27,9 @@ export default function CTASection() {
           transition={{ duration: 0.7, ease }}
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(59,130,246,0.25)] bg-[rgba(59,130,246,0.06)] mb-8">
-            <Sparkles size={14} className="text-[#3B82F6]" />
-            <span className="text-xs font-medium text-[#3B82F6]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(13,107,78,0.25)] bg-[rgba(13,107,78,0.06)] mb-8">
+            <Sparkles size={14} className="text-[#0D6B4E]" />
+            <span className="text-xs font-medium text-[#0D6B4E]">
               First workflow on us
             </span>
           </div>
@@ -40,7 +40,7 @@ export default function CTASection() {
             <span className="text-gradient-animated">than manual work.</span>
           </h2>
 
-          <p className="text-lg md:text-xl text-[#9CA3AF] leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="text-lg md:text-xl text-[#4B5563] leading-relaxed max-w-2xl mx-auto mb-10">
             Tell us what workflow is eating your team&apos;s time. We&apos;ll map it,
             build the automation, and deploy it — the first one&apos;s free. We bet on
             our work.
@@ -53,7 +53,7 @@ export default function CTASection() {
             </ShineButton>
           </div>
 
-          <p className="mt-8 text-sm text-[#6B7280]">
+          <p className="mt-8 text-sm text-[#9CA3AF]">
             No decks. No demos. We build the thing.
           </p>
         </motion.div>

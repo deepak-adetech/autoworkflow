@@ -97,7 +97,7 @@ const TOOLS_ROW_1 = [
   },
   {
     name: "Notion",
-    color: "#EEEEF0",
+    color: "#111827",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
         <rect x="4" y="2" width="16" height="20" rx="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -121,7 +121,7 @@ const TOOLS_ROW_2 = [
   },
   {
     name: "GitHub",
-    color: "#EEEEF0",
+    color: "#111827",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
         <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.164 6.839 9.49.5.09.682-.218.682-.484 0-.236-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.337-2.22-.252-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.16 22 16.418 22 12c0-5.523-4.477-10-10-10z" stroke="currentColor" strokeWidth="1.3"/>
@@ -217,15 +217,15 @@ const TOOLS_ROW_2 = [
 function ToolPill({ name, icon, color }: { name: string; icon: React.ReactNode; color: string }) {
   return (
     <div
-      className="flex items-center gap-2.5 px-4 py-2 rounded-full border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] shrink-0 transition-all duration-200 group/pill hover:border-[rgba(255,255,255,0.12)]"
+      className="flex items-center gap-2.5 px-4 py-2 rounded-full border border-[rgba(0,0,0,0.06)] bg-[rgba(0,0,0,0.02)] shrink-0 transition-all duration-200 group/pill hover:border-[rgba(0,0,0,0.12)]"
     >
-      <span className="text-[#6B7280] group-hover/pill:text-current transition-colors duration-200" style={{ color: undefined } as React.CSSProperties}
+      <span className="text-[#9CA3AF] group-hover/pill:text-current transition-colors duration-200" style={{ color: undefined } as React.CSSProperties}
         onMouseEnter={(e) => (e.currentTarget.style.color = color)}
         onMouseLeave={(e) => (e.currentTarget.style.color = "")}
       >
         {icon}
       </span>
-      <span className="text-sm text-[#9CA3AF] whitespace-nowrap font-medium">
+      <span className="text-sm text-[#4B5563] whitespace-nowrap font-medium">
         {name}
       </span>
     </div>
@@ -246,13 +246,13 @@ export default function ToolsIntegrations() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center"
         >
-          <p className="text-xs font-medium text-[#3B82F6] tracking-widest uppercase mb-3">
+          <p className="text-xs font-medium text-[#0D6B4E] tracking-widest uppercase mb-3">
             Tool Agnostic
           </p>
           <h2 className="text-2xl md:text-3xl font-bold tracking-[-0.02em] mb-3">
             We don&apos;t sell tools. <span className="text-gradient">We solve problems.</span>
           </h2>
-          <p className="text-[#9CA3AF] text-base leading-relaxed max-w-xl mx-auto">
+          <p className="text-[#4B5563] text-base leading-relaxed max-w-xl mx-auto">
             No vendor lock-in. We evaluate your needs and pick the best combination from 50+ platforms, AI models, and infrastructure providers.
           </p>
         </motion.div>
@@ -260,8 +260,8 @@ export default function ToolsIntegrations() {
 
       {/* Row 1 — scrolls left */}
       <div className="relative mb-4">
-        <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-[#0A0A0F] to-transparent" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-[#0A0A0F] to-transparent" />
+        <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-[#FAFAF8] to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-[#FAFAF8] to-transparent" />
         <div className="flex overflow-hidden">
           <div className="marquee-track flex shrink-0 gap-3 items-center">
             {row1Doubled.map((tool, i) => (
@@ -273,8 +273,8 @@ export default function ToolsIntegrations() {
 
       {/* Row 2 — scrolls right */}
       <div className="relative">
-        <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-[#0A0A0F] to-transparent" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-[#0A0A0F] to-transparent" />
+        <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-[#FAFAF8] to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-[#FAFAF8] to-transparent" />
         <div className="flex overflow-hidden">
           <div className="marquee-track-reverse flex shrink-0 gap-3 items-center">
             {row2Doubled.map((tool, i) => (
