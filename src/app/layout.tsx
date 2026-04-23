@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NoiseOverlay from "@/components/NoiseOverlay";
+import CursorGlow from "@/components/CursorGlow";
 
 export const metadata: Metadata = {
   title: "AutoWorkflows.AI — We Automate the Work Your Team Dreads",
@@ -40,6 +41,7 @@ export default function RootLayout({
     <html lang="en" className="antialiased">
       <body className="min-h-dvh flex flex-col bg-[#FAFAF8] text-[#111827]">
         <NoiseOverlay />
+        <CursorGlow />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
